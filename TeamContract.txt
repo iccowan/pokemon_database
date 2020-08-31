@@ -42,7 +42,7 @@ agreement. Then commit the revised contract via git.
 
 
 
-TEAM NAME [type your team name here]: 
+TEAM NAME [type your team name here]: Team Data
 
 
 
@@ -58,7 +58,8 @@ TEAM MEMBERS AND CONTACT INFO:
 
 AGREED MEETING TIME/PLACE/LINK FOR REGULAR WEEKLY TEAM MEETINGS/WORK:
 
-
+Sunday, 7pm, ZOOM LINK
+Thursday, 7pm, ZOOM LINK
 
 
 
@@ -74,12 +75,12 @@ reason for the penalty is to help teams stay on track and have greater
 success in completing the project as a whole.]
 
 PHASE 1: DESIGN
-1. Team Contract 					08/28
+1. Team Contract 					    08/30
 2. Mission & Objectives					09/01
 3. Tables, Fields, & PKs				09/04
 4. Table Relationships					09/08
-5. Business Rules					09/11
-6. Views, UI Flow (FINAL DESIGN)			09/15
+5. Business Rules					    09/11
+6. Views, UI Flow (FINAL DESIGN)		09/15
 
 PHASE 2: IMPLEMENTATION
 1. Coding Plan						09/18
@@ -100,7 +101,7 @@ your covenant.  It is OK to leave this blank.]
 WE HELD OUR INITIAL TEAM MEETING ON [enter date and time]:
 AT [type location/provide meeting link of meeting; e.g., Olin 023]:
 
-
+8/30/2020 Zoom:964 287 0990 at 8:30pm
 
 "BY TYPING OUR NAMES, EACH OF US INDICATES OUR AGREEMENT WITH THIS
 CONTRACT. WE UNDERSTAND THAT TO MODIFY THIS COVENANT, WE WILL HAVE TO
