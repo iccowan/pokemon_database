@@ -1,0 +1,17 @@
+Mission Statement: 
+
+We need to allow the Pokemon League to track all of the trainers along with
+their pokemon and other relevant information in order to allow them to properly
+track results from tournaments and balance the league.
+
+Mission Objectives:
+
+- Be able to add new trainers and store information about the trainers.
+- Allow the trainers to add pokemon and store information about the pokemon.
+- Track the hall of fame and automatically add a trainer to the hall of fame
+  if they successfully complete a challenge.
+- Track the elite 4.
+- Track the pokemon champion.
+- Track each challenge and the progress made by the trainer.
+- Track the items used by the trainer during the challenge.
+- Track purchases from the shop.
