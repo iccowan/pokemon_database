@@ -34,7 +34,7 @@ Table Specification:
         - item_name
         - item_description
 
-Table Name: Purchased Items IC
+Table Name: Purchased Items
 Table Description: The items purchased in the store. This allows us to
                    track all of the purchases that have been made.
 Table Type: Data
@@ -44,7 +44,7 @@ Table Specification:
         - item_id (FK)
         - trainer_id (FK)
 
-Table Name: Items Used IC
+Table Name: Items Used
 Table Description: The items that have been used in challenges. This allows us
                    to track when the items were used.
 Table Type: Data
