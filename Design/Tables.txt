@@ -25,7 +25,7 @@ Table Specification:
         - trainer_id (PK)
         - rank
 
-Table Name: Items List **ASK DO WE NEED TO STORE DIFFERENT TYPES OF ITEMS OR JUST WHAT IS PURCHASED**
+Table Name: Items **ASK DO WE NEED TO STORE DIFFERENT TYPES OF ITEMS OR JUST WHAT IS PURCHASED**
 Table Description:
 Table Type: Data
 Table Specification:
@@ -35,7 +35,8 @@ Table Specification:
         - item_description
 
 Table Name: Purchased Items IC
-Table Description:
+Table Description: The items purchased in the store. This allows us to
+                   track all of the purchases that have been made.
 Table Type: Data
 Table Specification:
     - Fields:
@@ -44,7 +45,8 @@ Table Specification:
         - trainer_id (FK)
 
 Table Name: Items Used IC
-Table Description:
+Table Description: The items that have been used in challenges. This allows us
+                   to track when the items were used.
 Table Type: Data
 Table Specification:
     - Fields:
