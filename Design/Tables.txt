@@ -54,17 +54,18 @@ Table Specification:
         - challenge_id (CPK/FK)
 
 Table Name: Challenges
-Table Description:
+Table Description: Trace the progress of each challenger.
 Table Type: Data
 Table Specification:
     - Fields:
         - challenge_id (PK)
         - trainer_id (FK)
-        - progress_made
+        - progress
 
 Table Name: Hall of Fame **ASK HALL OF FAME ONLY ONCE?**
-Table Description:
+Table Description: Store the names and ids of all the trainers who complete the challenge.
 Table Type: Data
 Table Specification:
     - Fields:
-        - trainer_id (PK/FK)
+        - trainer_id (FK)
+        - trainer_name
