@@ -8,6 +8,8 @@ Table Specification:
     - Fields:
         - trainer_id (PK)
         - trainer_name
+	- rival_id
+	- hometown
         
 Table Name: Pokemon 
 Table Description: The Pokemon that are owned by the trainers who compete in the Challenge, including 
@@ -63,11 +65,22 @@ Table Specification:
         - challenge_id (PK)
         - trainer_id (FK)
         - progress
+	- date
 
-Table Name: Hall of Fame **ASK HALL OF FAME ONLY ONCE?**
-Table Description: Store the names and ids of all the trainers who complete the challenge.
+Table Name: Pokemon for Challenge
+Table Description:
+Table Type:
+Table Specification:
+    - Fields:
+	- pkmn_challenge_id (PK)
+	- challenge_id
+	- pokemon_id
+
+Table Name: Hall of Fame **DO NOT HAVE TO BE UNIQUE**
+Table Description: Store the names and ids of all the trainers and their pokemon who complete the challenge.
 Table Type: Data
 Table Specification:
     - Fields:
+	- hof_id (PK)
         - trainer_id (FK)
-        - trainer_name
+	- pokemon_id (FK)
