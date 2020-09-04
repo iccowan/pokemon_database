@@ -58,7 +58,7 @@ Table Specification:
     - Fields:
         - challenge_id (PK)
         - trainer_id (FK)
-        - progress_made
+        - progress
 
 Table Name: Hall of Fame **ASK HALL OF FAME ONLY ONCE?**
 Table Description: Store the names and ids of all the trainers who complete the challenge.
