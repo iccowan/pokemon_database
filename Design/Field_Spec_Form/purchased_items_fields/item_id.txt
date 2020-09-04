@@ -2,30 +2,30 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           item_id
+Field Name:           _ item_id
 
 Specification Type:
   Unique:  _ 
   Generic: _
-  Replica: X
-Parent Table:         purchased_items
-Label:                Item ID
-Source Specification: items
+  Replica: _ X
+Parent Table:         _ purchased_items
+Label:                _ Item ID
+Source Specification: _ items
 Shared By:            _ 
 Aliases:              _ 
-Description:          The ID of the item that was purchased.
+Description:          _ The ID of the item that was purchased.
 
 
 PHYSICAL ELEMENTS
 
-Data Type:            INT
-Length:               10
-Decimal Places:       0
-Input Mask:           XXXXXXXXXX
-Display Format:       XXXXXXXXXX
+Data Type:            _ INT
+Length:               _ 10
+Decimal Places:       _
+Input Mask:           _ XXXXXXXXXX
+Display Format:       _ XXXXXXXXXX
 Character Support:
   Letters (A-Z):      _ 
-  Numbers (0-9):      X
+  Numbers (0-9):      _ X
   Keyboard (.,/$#%):  _ 
   Special (©®™Σπ):    _ 
 
@@ -34,60 +34,60 @@ LOGICAL ELEMENTS
 
 Key Type:      Non:        _ 
                Primary:    _ 
-               Foreign:    X
+               Foreign:    _ X
                Alternate:  _ 
 
-Key Structure: Simple:     X
+Key Structure: Simple:     _ X
                Composite:  _ 
 
-Uniqueness:    Non-unique: X
+Uniqueness:    Non-unique: _ X
                Unique:     _ 
 
 Null Support:  Nulls OK:   _ 
-               No nulls:   X
+               No nulls:   _ X
 
 Values Entered By: User:   _
-                   System: X
+                   System: _ X
 
 Required Value:    No:     _ 
-                   Yes:    X
+                   Yes:    _ X
 
 Default Value:     _ 
 
-Range of Values:   0 - 999999999
+Range of Values:   _ 0 - 999999999
 
 Edit Rule:
   Enter now, edits allowed:       _ 
-  Enter now, edits not allowed:   X
+  Enter now, edits not allowed:   _ X
   Enter later, edits allowed:     _ 
   Enter later, edits not allowed: _ 
   Not determined at this time:    _ 
 
 Comparisons Allowed:
-  Same Field:   X
+  Same Field:   _ X
                 ALL  _ 
-                =    X
+                =    _ X
                 >    _ 
                 >=   _ 
-                !=   X
+                !=   _ X
                 <    _ 
                 <=   _ 
 
-  Other Fields: X
+  Other Fields: _ X
                 ALL  _ 
-                =    X
+                =    _ X
                 >    _ 
                 >=   _ 
-                !=   X
+                !=   _ X
                 <    _ 
                 <=   _ 
 
-  Value Expr.:  X
+  Value Expr.:  _ X
                 ALL  _ 
-                =    X
+                =    _ X
                 >    _ 
                 >=   _ 
-                !=   X
+                !=   _ X
                 <    _ 
                 <=   _ 
 

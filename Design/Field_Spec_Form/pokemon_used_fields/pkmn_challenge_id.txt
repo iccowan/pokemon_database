@@ -2,18 +2,19 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ challenge_id
+Field Name:           _ pkmn_challenge_id
 
 Specification Type:
-  Unique:  _
+  Unique:  _ X
   Generic: _ 
-  Replica: _ X
-Parent Table:         _ items_used
-Label:                _ Challenge ID
-Source Specification: _ challenges
-Shared By:            _
+  Replica: _ 
+Parent Table:         _ pkmn_challenge
+Label:                _ Pokemon Challenge ID
+Source Specification: _
+Shared By:            _ 
 Aliases:              _ 
-Description:          _ ID for the challenge in which the item was used.
+Description:          _ Unique ID for the pokemon that was used in a specified
+                        challenge.
 
 
 PHYSICAL ELEMENTS
@@ -21,7 +22,7 @@ PHYSICAL ELEMENTS
 Data Type:            _ INT
 Length:               _ 10
 Decimal Places:       _
-Input Mask:           _ 
+Input Mask:           _
 Display Format:       _ XXXXXXXXXX
 Character Support:
   Letters (A-Z):      _ 
@@ -34,14 +35,14 @@ LOGICAL ELEMENTS
 
 Key Type:      Non:        _ 
                Primary:    _ X
-               Foreign:    _ X
+               Foreign:    _ 
                Alternate:  _ 
 
-Key Structure: Simple:     _
-               Composite:  _ X
+Key Structure: Simple:     _ X
+               Composite:  _ 
 
-Uniqueness:    Non-unique: _ X
-               Unique:     _
+Uniqueness:    Non-unique: _ 
+               Unique:     _ X
 
 Null Support:  Nulls OK:   _ 
                No nulls:   _ X
@@ -65,11 +66,11 @@ Edit Rule:
 
 Comparisons Allowed:
   Same Field:   _ X
-                ALL  _
-                =    _ X
+                ALL  _ X
+                =    _ 
                 >    _ 
                 >=   _ 
-                !=   _ X
+                !=   _ 
                 <    _ 
                 <=   _ 
 
@@ -83,11 +84,11 @@ Comparisons Allowed:
                 <=   _ 
 
   Value Expr.:  _ X
-                ALL  _
-                =    _ X
+                ALL  _ X
+                =    _ 
                 >    _ 
                 >=   _ 
-                !=   _ X
+                !=   _ 
                 <    _ 
                 <=   _ 
 
