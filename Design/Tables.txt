@@ -49,7 +49,7 @@ Table Specification:
 Table Name: Items Used
 Table Description: The items that have been used in challenges. This allows us
                    to track when the items were used.
-Table Type: Data
+Table Type: Linking
 Table Specification:
     - Fields:
         - purchased_id (CPK/FK)
@@ -63,22 +63,22 @@ Table Specification:
         - challenge_id (PK)
         - trainer_id (FK)
         - progress
-	- date
+	    - date
 
-Table Name: Pokemon for Challenge
-Table Description:
-Table Type:
+Table Name: Pokemon Used for Challenge
+Table Description: Tracks the pokemon that were used for the challenge
+Table Type: Linking
 Table Specification:
     - Fields:
-	- pkmn_challenge_id (PK)
-	- challenge_id
-	- pokemon_id
+	    - pkmn_challenge_id (PK)
+	    - challenge_id
+	    - pokemon_id
 
 Table Name: Hall of Fame **DO NOT HAVE TO BE UNIQUE**
 Table Description: Store the names and ids of all the trainers and their pokemon who complete the challenge.
 Table Type: Data
 Table Specification:
     - Fields:
-	- hof_id (PK)
+	    - hof_id (PK)
         - trainer_id (FK)
-	- pokemon_id (FK)
+	    - pokemon_id (FK)
