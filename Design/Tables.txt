@@ -1,0 +1,68 @@
+Tables:
+
+Table Name: Trainers **ASK WHAT WE NEED TO STORE**
+Table Description: The Trainers who compete in the Challenge as well as the Elite Four and Champion.
+Table Type: Data
+Table Specification:
+    - Fields:
+        - trainer_id (PK)
+        - trainer_name
+        
+Table Name: Pokemon **ASK**
+Table Description:
+Table Type: Data
+Table Specification:
+    - Fields:
+        - pokemon_id (PK)
+        - pokemon_name
+        - trainer_id (FK)
+
+Table Name: Elite Four
+Table Description:
+Table Type: Data
+Table Specification:
+    - Fields:
+        - trainer_id (PK)
+        - rank
+
+Table Name: Items List **ASK DO WE NEED TO STORE DIFFERENT TYPES OF ITEMS OR JUST WHAT IS PURCHASED**
+Table Description:
+Table Type: Data
+Table Specification:
+    - Fields:
+        - item_id (PK)
+        - item_name
+        - item_description
+
+Table Name: Purchased Items IC
+Table Description:
+Table Type: Data
+Table Specification:
+    - Fields:
+        - purchased_id (PK)
+        - item_id (FK)
+        - trainer_id (FK)
+
+Table Name: Items Used IC
+Table Description:
+Table Type: Data
+Table Specification:
+    - Fields:
+        - purchased_id (CPK/FK)
+        - challenge_id (CPK/FK)
+
+Table Name: Challenges
+Table Description:
+Table Type: Data
+Table Specification:
+    - Fields:
+        - challenge_id (PK)
+        - trainer_id (FK)
+        - progress_made
+
+Table Name: Hall of Fame **ASK HALL OF FAME ONLY ONCE?**
+Table Description:
+Table Type: Data
+Table Specification:
+    - Fields:
+        - trainer_id (PK/FK)
