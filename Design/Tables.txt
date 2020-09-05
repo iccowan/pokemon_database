@@ -1,19 +1,19 @@
 Tables:
 
 Table Name: Trainers 
-Table Description: The Trainers who compete in the Challenge including the Elite Four and Champion.
-                   This allows us to keep track of how many people participate to help calculate the difficulty of the challenge. 
+Table Description: The Trainers who compete in the Challenge. This allows us to keep track of how many people
+                   participate to help calculate the difficulty of the challenge. 
 Table Type: Data
 Table Specification:
     - Fields:
         - trainer_id (PK)
         - trainer_name
-	- rival_id
-	- hometown
+	    - rival_id
+	    - hometown
         
 Table Name: Pokemon 
-Table Description: The Pokemon that are owned by the trainers who compete in the Challenge, including 
-                   the Elite Four's Pokemon and Champion's Pokemon.
+Table Description: The Pokemon that are owned by the trainers who compete in the Challenge. This allows us to track
+                   what Pokemon are being used by the most succesful trainers. 
 Table Type: Data
 Table Specification:
     - Fields:
