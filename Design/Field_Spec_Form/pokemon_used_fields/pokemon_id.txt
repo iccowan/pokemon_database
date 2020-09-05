@@ -2,18 +2,18 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ challenge_id
+Field Name:           _ pokemon_id
 
 Specification Type:
   Unique:  _
   Generic: _ 
   Replica: _ X
-Parent Table:         _ items_used
-Label:                _ Challenge ID
-Source Specification: _ challenges
+Parent Table:         _ pkmn_challenge_id
+Label:                _ Pokemon ID
+Source Specification: _ pokemon
 Shared By:            _
 Aliases:              _ 
-Description:          _ ID for the challenge in which the item was used.
+Description:          _ ID for the pokemon used.
 
 
 PHYSICAL ELEMENTS
@@ -33,12 +33,12 @@ Character Support:
 LOGICAL ELEMENTS
 
 Key Type:      Non:        _ 
-               Primary:    _ X
+               Primary:    _
                Foreign:    _ X
                Alternate:  _ 
 
-Key Structure: Simple:     _
-               Composite:  _ X
+Key Structure: Simple:     _ X
+               Composite:  _ 
 
 Uniqueness:    Non-unique: _ X
                Unique:     _

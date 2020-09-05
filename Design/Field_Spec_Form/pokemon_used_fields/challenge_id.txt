@@ -8,7 +8,7 @@ Specification Type:
   Unique:  _
   Generic: _ 
   Replica: _ X
-Parent Table:         _ items_used
+Parent Table:         _ pkmn_challenge_id
 Label:                _ Challenge ID
 Source Specification: _ challenges
 Shared By:            _
@@ -33,12 +33,12 @@ Character Support:
 LOGICAL ELEMENTS
 
 Key Type:      Non:        _ 
-               Primary:    _ X
+               Primary:    _ 
                Foreign:    _ X
                Alternate:  _ 
 
-Key Structure: Simple:     _
-               Composite:  _ X
+Key Structure: Simple:     _ X
+               Composite:  _ 
 
 Uniqueness:    Non-unique: _ X
                Unique:     _
