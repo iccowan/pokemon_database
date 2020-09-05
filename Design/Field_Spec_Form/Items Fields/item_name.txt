@@ -1,0 +1,116 @@
+FIELD SPECIFICATIONS
+
+GENERAL ELEMENTS
+
+Field Name:           _ item_name
+
+Specification Type:
+  Unique:  _ 
+  Generic: _ Yes
+  Replica: _ 
+Parent Table:         _ Items
+Label:                _ itemName
+Source Specification: _ 
+Shared By:            _ 
+Aliases:              _ 
+Description:          _ Name of items in the league store
+
+
+PHYSICAL ELEMENTS
+
+Data Type:            _ Alphanumeric
+Length:               _ 10
+Decimal Places:       _ None
+Input Mask:           _ AAAAAAAAAA
+Display Format:       _ Should begin with a capital letter
+Character Support:
+  Letters (A-Z):      _ Yes
+  Numbers (0-9):      _ 
+  Keyboard (.,/$#%):  _ 
+  Special (©®™Σπ):    _ 
+
+
+LOGICAL ELEMENTS
+
+Key Type:      Non:        _ Yes
+               Primary:    _ 
+               Foreign:    _ 
+               Alternate:  _ 
+
+Key Structure: Simple:     _ 
+               Composite:  _ 
+
+Uniqueness:    Non-unique: _ Yes
+               Unique:     _ 
+
+Null Support:  Nulls OK:   _ 
+               No nulls:   _ Yes
+
+Values Entered By: User:   _ 
+                   System: _ Yes
+
+Required Value:    No:     _ 
+                   Yes:    _ Yes
+
+Default Value:     _ 
+
+Range of Values:   _ General
+
+Edit Rule:
+  Enter now, edits allowed:       _ 
+  Enter now, edits not allowed:   _ Yes
+  Enter later, edits allowed:     _ 
+  Enter later, edits not allowed: _ 
+  Not determined at this time:    _ 
+
+Comparisons Allowed:
+  Same Field:   _ 
+                ALL  _ 
+                =    _ 
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+  Other Fields: _
+                ALL  _ 
+                =    _ 
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+  Value Expr.:  _ 
+                ALL  _ 
+                =    _ Yes
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+Operations Allowed:
+  Same Field:   _ 
+                ALL  _ 
+                +    _ 
+                -    _ 
+                *    _ 
+                /    _ 
+
+  Other Fields: _ 
+                ALL  _ 
+                +    _ 
+                -    _ 
+                *    _ 
+                /    _ 
+
+  Value Expr.:  _ 
+                ALL  _ 
+                +    _ 
+                -    _ 
+                *    _ 
+                /    _ 
+
+NOTES:
