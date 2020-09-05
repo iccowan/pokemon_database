@@ -1,0 +1,116 @@
+FIELD SPECIFICATIONS
+
+GENERAL ELEMENTS
+
+Field Name:           _ trainer_id
+
+Specification Type:
+  Unique:  _ YES
+  Generic: _ 
+  Replica: _ 
+Parent Table:         _ EliteFour
+Label:                _ trainer#
+Source Specification: _ 
+Shared By:            _ 
+Aliases:              _ 
+Description:          _ id of each Elite Four member
+
+
+PHYSICAL ELEMENTS
+
+Data Type:            _ Numeric
+Length:               _ 6
+Decimal Places:       _ None
+Input Mask:           _ ####
+Display Format:       _ 0000
+Character Support:
+  Letters (A-Z):      _ 
+  Numbers (0-9):      _ YES
+  Keyboard (.,/$#%):  _ 
+  Special (©®™Σπ):    _ 
+
+
+LOGICAL ELEMENTS
+
+Key Type:      Non:        _ 
+               Primary:    _ YES
+               Foreign:    _ 
+               Alternate:  _ 
+
+Key Structure: Simple:     _ YES
+               Composite:  _ 
+
+Uniqueness:    Non-unique: _ 
+               Unique:     _ YES
+
+Null Support:  Nulls OK:   _ 
+               No nulls:   _ YES
+
+Values Entered By: User:   _ 
+                   System: _ YES
+
+Required Value:    No:     _ 
+                   Yes:    _ YES
+
+Default Value:     _ 
+
+Range of Values:   _ 000000-999999
+
+Edit Rule:
+  Enter now, edits allowed:       _ 
+  Enter now, edits not allowed:   _ YES
+  Enter later, edits allowed:     _ 
+  Enter later, edits not allowed: _ 
+  Not determined at this time:    _ 
+
+Comparisons Allowed:
+  Same Field:   _ 
+                ALL  _ 
+                =    _ 
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+  Other Fields: _
+                ALL  _ 
+                =    _ 
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+  Value Expr.:  _ 
+                ALL  _ 
+                =    _ YES
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+Operations Allowed:
+  Same Field:   _ 
+                ALL  _ 
+                +    _ 
+                -    _ 
+                *    _ 
+                /    _ 
+
+  Other Fields: _ 
+                ALL  _ 
+                +    _ 
+                -    _ 
+                *    _ 
+                /    _ 
+
+  Value Expr.:  _ 
+                ALL  _ 
+                +    _ 
+                -    _ 
+                *    _ 
+                /    _ 
+
+NOTES:
