@@ -1,0 +1,51 @@
+BUSINESS RULE SPECIFICATIONS
+
+RULE INFORMATION
+
+Statement:  _ Trainers can only have between 1-6 pokemon for each challenge
+
+Constraint: _ In the Pokemon table, up to 6 of the records can have an identical trainer_id(FK). Therefore the degree of participation between Pokemon and Trainers is restricted to (1,6).
+
+Type:     Database Oriented:     _ X
+          Application Oriented   _ 
+
+Category: Field Specific:        _ 
+          Relationship Specific: _ X
+
+Test On:  Insert:                _ X
+          Delete:                _ X
+          Update:                _ 
+
+
+STRUCTURES AFFECTED
+
+Field Names: _ Pokemon.pokemon_id
+
+Table Names: _ Pokemon
+
+
+FIELD ELEMENTS AFFECTED
+
+Physical Elements: Data Type:           _ 
+                   Length:              _ 
+                   Decimal Places:      _ 
+                   Character Support:   _ 
+                   Input Mask:          _ 
+                   Display Format:      _ 
+
+Logical Elements:  Key Type:            _ 
+                   Key Structure:       _ 
+                   Uniqueness:          _ 
+                   Null Support:        _ 
+                   Values Entered By:   _ 
+                   Default Value:       _ 
+                   Range of Values:     _ 
+                   Comparisons Allowed: _ 
+                   Operations Allowed:  _ 
+                   Edit Rule:           _ 
+
+
+ACTION TAKEN
+
+
+NOTES: _ 
