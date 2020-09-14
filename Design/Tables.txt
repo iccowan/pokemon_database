@@ -10,6 +10,17 @@ Table Specification:
         - trainer_name
 	    - rival_id
 	    - hometown
+
+Table Name: Pokemon Types
+Table Description: Stores all of the different types of Pokemon. This allows us
+                   to assign the types in the linking table and be able to
+                   add/remove types as necessary.
+Table Type: Validation
+Table Specification:
+    - Fields:
+        - pokemon_type_id (PK)
+        - type_name
+        - description
         
 Table Name: Pokemon 
 Table Description: The Pokemon that are owned by the trainers who compete in the Challenge. This allows us to track
@@ -20,6 +31,15 @@ Table Specification:
         - pokemon_id (PK)
         - pokemon_name
         - trainer_id (FK)
+        - level
+
+Table Name: Actual Pokemon Types
+Table Description: Links the Pokemon with their actual types.
+Table Type: Linking
+Table Specification:
+    - Fields:
+        - pokemon_id (CPK/FK)
+        - pokemon_type_id (CPK/FK)
 
 Table Name: Elite Four
 Table Description:
@@ -31,7 +51,7 @@ Table Specification:
 
 Table Name: Items
 Table Description:
-Table Type: Data
+Table Type: Validation
 Table Specification:
     - Fields:
         - item_id (PK)
@@ -75,8 +95,9 @@ Table Specification:
 	    - pkmn_challenge_id (PK)
 	    - challenge_id (FK)
 	    - pokemon_id (FK)
+        - item_id (FK)
 
-Table Name: Hall of Fame **DO NOT HAVE TO BE UNIQUE ENTRIES**
+Table Name: Hall of Fame
 Table Description: Store the names and ids of all the trainers and their pokemon who complete the challenge.
 Table Type: Data
 Table Specification:

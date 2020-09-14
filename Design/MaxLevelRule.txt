@@ -1,0 +1,55 @@
+BUSINESS RULE SPECIFICATIONS
+
+RULE INFORMATION
+
+Statement:  _ A Pokemon can be any level between 1 and 100.
+
+Constraint: _ Pokemon that are entered into the pokemon table can have a 
+                level field that has a value from 1-100 but not any number
+                above 100 and not below 1.
+
+Type:     Database Oriented:     _ X
+          Application Oriented   _ 
+
+Category: Field Specific:        _ X
+          Relationship Specific: _ 
+
+Test On:  Insert:                _ X
+          Delete:                _ X
+          Update:                _X
+
+
+STRUCTURES AFFECTED
+
+Field Names: _ pokemon.level
+
+Table Names: _
+
+
+FIELD ELEMENTS AFFECTED
+
+Physical Elements: Data Type:           _ 
+                   Length:              _ X
+                   Decimal Places:      _ 
+                   Character Support:   _ 
+                   Input Mask:          _ 
+                   Display Format:      _ 
+
+Logical Elements:  Key Type:            _ 
+                   Key Structure:       _ 
+                   Uniqueness:          _ 
+                   Null Support:        _ 
+                   Values Entered By:   _ 
+                   Default Value:       _ 
+                   Range of Values:     _ 
+                   Comparisons Allowed: _ 
+                   Operations Allowed:  _ 
+                   Edit Rule:           _ 
+
+
+ACTION TAKEN
+
+_ The length of the pokemon.level field is restricted.
+
+
+NOTES: _
