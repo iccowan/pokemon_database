@@ -1,0 +1,7 @@
+Team Data Coding Plan
+
+Each table will consist of a way to add, edit, and view values:
+
+Gus, Zuochen: Trainers - Pokemon - Pokemon Types - Actual Pokemon Types - Elite Four
+Ian: Items - Purchased Items - Items Used - Login Page - SQL
+Ben: Challenges - Pokemon Used for Challenges - Hall of Fame
