@@ -1,0 +1,54 @@
+BUSINESS RULE SPECIFICATIONS
+
+RULE INFORMATION
+
+Statement:  _ A purchased item may only be used once in challenges.
+
+Constraint: _ The items_used.purchased_id should be unique so that items are not
+	      marked as being used more than once.
+
+Type:     Database Oriented:     _ X
+          Application Oriented   _ 
+
+Category: Field Specific:        _ X
+          Relationship Specific: _ 
+
+Test On:  Insert:                _ X
+          Delete:                _ 
+          Update:                _
+
+
+STRUCTURES AFFECTED
+
+Field Names: _ items_used.purchased_id
+
+Table Names: _ items_used
+
+
+FIELD ELEMENTS AFFECTED
+
+Physical Elements: Data Type:           _ 
+                   Length:              _ 
+                   Decimal Places:      _ 
+                   Character Support:   _ 
+                   Input Mask:          _ 
+                   Display Format:      _ 
+
+Logical Elements:  Key Type:            _ 
+                   Key Structure:       _ 
+                   Uniqueness:          _ X
+                   Null Support:        _ 
+                   Values Entered By:   _ 
+                   Default Value:       _ 
+                   Range of Values:     _ 
+                   Comparisons Allowed: _ 
+                   Operations Allowed:  _ 
+                   Edit Rule:           _ 
+
+
+ACTION TAKEN
+
+_ Updated items_used.purchase_id to make the values in each row to be unique.
+
+
+NOTES: _
