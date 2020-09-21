@@ -92,9 +92,8 @@ Table Description: Tracks the pokemon that were used for the challenges.
 Table Type: Linking
 Table Specification:
     - Fields:
-	    - pkmn_challenge_id (PK)
-	    - challenge_id (FK)
-	    - pokemon_id (FK)
+	- challenge_id (CPK/FK)
+	- pokemon_id (CPK/FK)
         - item_id (FK)
 
 Table Name: Hall of Fame
