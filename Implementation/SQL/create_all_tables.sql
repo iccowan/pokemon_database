@@ -13,3 +13,12 @@ USE pokemon_league;
 
 /* trainers table */
 SOURCE trainers.sql;
+
+/* items table */
+SOURCE items.sql;
+
+/* purchased_items table */
+SOURCE purchased_items.sql;
+
+/* items_used table */
+SOURCE items_used.sql;
