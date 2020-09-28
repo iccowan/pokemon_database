@@ -56,7 +56,7 @@ Table Specification:
     - Fields:
         - item_id (PK)
         - item_name
-        - item_description
+        - item_description 
 
 Table Name: Purchased Items
 Table Description: The items purchased in the store. This allows us to
