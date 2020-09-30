@@ -26,8 +26,22 @@ class User {
         // Connect to the database, and find the user
         $connection = new DBConnect();
         $conn = $connection->getConnection();
-        $get_user = $conn->prepare("SELECT * FROM trainers WHERE ")
+        $get_user = $conn->prepare("SELECT * FROM trainers WHERE trainer_name = ?");
+        $get_user->bind_param("s", $name);
+        $name = $username;
+        
+        $trainer_record = $get_user->execute();
+        $get_user->close();
 
+        // Now, make sure the user exists and the password is correct
+        $user_info = $conn->prepare("SELECT * FROM users WHERE trainer_id = ?");
+        $user_info->bind_param("i", $user_id);
+        $user_id = $trainer_record[0];
+        
+        $user_record = $user_info->execute();
+        $user_info->close();
+
+        // CONTINUE HERE
     }
 }
 

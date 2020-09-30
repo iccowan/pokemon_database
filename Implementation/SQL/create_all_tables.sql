@@ -17,6 +17,9 @@ SET foreign_key_checks = 0;
 /* trainers table */
 SOURCE trainers.sql;
 
+/* users table */
+SOURCE users.sql;
+
 /* pokemon table */
 SOURCE pokemon.sql;
 
