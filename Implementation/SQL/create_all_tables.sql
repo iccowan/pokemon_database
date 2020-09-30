@@ -9,6 +9,9 @@ DROP DATABASE IF EXISTS pokemon_league;
 CREATE DATABASE pokemon_league;
 USE pokemon_league;
 
+/* Disable foreign key checks so we can properly create the tables */
+SET foreign_key_checks = 0;
+
 /* Now, let's create each of the tables from their own files */
 
 /* trainers table */
@@ -18,7 +21,7 @@ SOURCE trainers.sql;
 SOURCE pokemon.sql;
 
 /* pokemon_types table */
-SOURCE pokemon_types.sql;
+SOURCE pokemon_type.sql;
 
 /* actual_pokemon_types table */
 SOURCE actual_pokemon_types.sql;
@@ -39,7 +42,10 @@ SOURCE items_used.sql;
 SOURCE challenges.sql;
 
 /* pokemon_used_for_challenge table */
-SOURCE pokemon_used_for_challenge.sql;
+SOURCE pokemon_used_for_challenges.sql;
 
 /* hall_of_fame table */
 SOURCE hall_of_fame.sql;
+
+/* Re-enable foreign key checks so they are checked properly */
+SET foreign_key_checks = 1;
