@@ -14,6 +14,18 @@ USE pokemon_league;
 /* trainers table */
 SOURCE trainers.sql;
 
+/* pokemon table */
+SOURCE pokemon.sql;
+
+/* pokemon_types table */
+SOURCE pokemon_types.sql;
+
+/* actual_pokemon_types table */
+SOURCE actual_pokemon_types.sql;
+
+/* elite_four table */
+SOURCE elite_four.sql
+
 /* items table */
 SOURCE items.sql;
 
@@ -22,3 +34,12 @@ SOURCE purchased_items.sql;
 
 /* items_used table */
 SOURCE items_used.sql;
+
+/* challenges table */
+SOURCE challenges.sql;
+
+/* pokemon_used_for_challenge table */
+SOURCE pokemon_used_for_challenge.sql;
+
+/* hall_of_fame table */
+SOURCE hall_of_fame.sql;
