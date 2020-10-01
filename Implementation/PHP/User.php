@@ -13,8 +13,9 @@ class User {
     // Create a user object, but we aren't going to do anything initially
     // This should be used either prior to authenticating a user or
     // to check and see if a user is already authenticated
-    public function __construct() {
-        // Do nothing, but need to be able to create a user
+    private function __construct() {
+        // Constructor for when we create a user in here
+        
     }
 
     // Login the user and return a User object
