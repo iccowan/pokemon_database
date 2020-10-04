@@ -56,7 +56,7 @@
 
             // End the form
             echo "<input type=\"submit\" value=\"Delete Selected Items\">\n";
-            echo "</form>\n"
+            echo "</form>\n";
         }
 
         // Get all of the items from the database
