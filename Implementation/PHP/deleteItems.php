@@ -22,7 +22,7 @@ $stmt->bind_param("i", $id);
 
 // Loop through all of the items and see if any should be deleted
 $res = $all_items->fetch_all();
-$rows = $items->num_rows;
+$rows = $all_items->num_rows;
 
 for($i = 0; $i < $rows; $i++) {
     $id = $res[$i][0];
