@@ -30,7 +30,7 @@ error_reporting(E_ALL);
             $item_desc = trim($_POST['item_description']);
             $redirect = false; // We'll set this as true when we're ready to redirect
 
-            print_r($item_name);
+            print_r("\"" . $item_name . "\"");
             exit;
 
             if(empty($item_name)) {
