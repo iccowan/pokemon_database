@@ -65,7 +65,7 @@
                 echo "<input type=\"submit\" value=\"Delete Selected Items\">\n";
                 echo "</form>\n";
             } else {
-                echo "<h5>No items exist!</h5>\n";
+                echo "<h3>No items exist!</h3>\n";
             }
         }
 

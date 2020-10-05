@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Init the database connection
-include_once('DBConnect.php');
+require_once('DBConnect.php');
 $connection = new DBConnect();
 $conn = $connection->getConnection();
 
