@@ -7,7 +7,7 @@
     <h1>Pokemon League Items</h1>
     <hr>
     <?php
-        include('DBConnect.php');
+        include_once('DBConnect.php');
 
         // Initialize the database connection
         $connection = new DBConnect();
@@ -22,7 +22,7 @@
             $cols = $items->field_count;
 
             // Create a form to delete items
-            "<form action=\"/deleteItems.php\" method=\"POST\">\n";
+            echo "<form action=\"/deleteItems.php\" method=\"POST\">\n";
             echo "<table>\n";
             echo "<thead>\n";
             echo "<tr>\n";
