@@ -26,14 +26,14 @@ error_reporting(E_ALL);
         if(isset($_POST['item_name']) || isset($_POST['item_description'])) {
             // Make sure we alert that there's an error if either name or
             // description does not exist
-            $item_name = $_POST['item_name'];
-            $item_desc = $_POST['item_description'];
+            $item_name = trim($_POST['item_name']);
+            $item_desc = trim($_POST['item_description']);
             $redirect = false; // We'll set this as true when we're ready to redirect
 
-            if($item_name == "") {
+            if(empty($item_name)) {
                 CustomError::setError('Item name is required!');
                 $redirect = true;
-            } elseif($item_name == "") {
+            } elseif(empty($item_name)) {
                 CustomError::setError('Item description is required');
                 $redirect = true;
             }
