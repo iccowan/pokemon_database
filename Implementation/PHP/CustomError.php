@@ -13,9 +13,9 @@ class CustomError {
         $cookie = $_COOKIE['error' . $i];
         $errors = array();
         while(isset($cookie)) {
-            array_push($errors, $_COOKIE['error' . $i]);
-            $i++;
-            $cookie = $_COOKIE['error' . $i];
+            array_push($errors, $cookie);
+            setcookie('error' . $i, 'unset', time() - 3600);
+            $cookie = $_COOKIE['error' . ++$i];
         }
 
         return $errors;
@@ -31,8 +31,7 @@ class CustomError {
             $i = 0;
             $cookie = $_COOKIE['error' . $i];
             while(isset($cookie)) {
-                $i++;
-                $cookie = $_COOKIE['error' . $i];
+                $cookie = $_COOKIE['error' . ++$i];
             }
             
             setcookie("error" . $i, $error);
