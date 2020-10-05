@@ -22,6 +22,7 @@ error_reporting(E_ALL);
     <hr>
     <?php
         print_r($_POST);
+        exit;
         // If post variables are set, let's get those and add them to the DB
         // If not, we'll produce a form to create new items
         if(isset($_POST['item_name']) || isset($_POST['item_description'])) {
