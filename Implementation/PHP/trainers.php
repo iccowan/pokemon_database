@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pokemon League Items</title>
+    <title>Pokemon League Trainers</title>
 </head>
 <body>
     <h1>Pokemon League Trainers</h1>
@@ -30,7 +30,6 @@
             <?php
             echo "<table>\n<thead>\n<tr>";
             echo "<td><b> Delete? </b></td>";
-            echo "<td><b> Test </b></td>";
 
             $fields = $result->fetch_fields();
             for ($i=0; $i<$n_cols; $i++){
