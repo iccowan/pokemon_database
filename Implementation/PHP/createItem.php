@@ -25,6 +25,7 @@ error_reporting(E_ALL);
         // If not, we'll produce a form to create new items
         if(isset($_POST['item_name']) || isset($_POST['item_description'])) {
             print_r($_POST);
+            print_r($_POST['item_name'] == '');
             exit;
             // Make sure we alert that there's an error if either name or
             // description does not exist
