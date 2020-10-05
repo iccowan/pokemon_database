@@ -26,43 +26,47 @@
             $rows = $items->num_rows;
             $cols = $items->field_count;
 
-            // Create a form to delete items
-            echo "<form action=\"/deleteItems.php\" method=\"POST\">\n";
-            echo "<table>\n";
-            echo "<thead>\n";
-            echo "<tr>\n";
-
-            // Create the header
-            echo "<th>Item ID</th>\n";
-            echo "<th>Item Name</th>\n";
-            echo "<th>Item Description</th>\n";
-            echo "<th>Delete</th>\n";
-
-            echo "</tr>\n";
-            echo "</thead>\n";
-            echo "<tbody>\n";
-
-            // Create the body
-            for($i = 0; $i < $rows; $i++) {
+            if($rows > 0) {
+                // Create a form to delete items
+                echo "<form action=\"/deleteItems.php\" method=\"POST\">\n";
+                echo "<table>\n";
+                echo "<thead>\n";
                 echo "<tr>\n";
-                for($j = 0; $j < $cols; $j++) {
-                    echo "<td>" . $res[$i][$j] . "</td>\n";
-                }
 
-                // Add one more column at the end with checkboxes to delete items
-                $id = $res[$i][0];
-                echo "<td><input type=\"checkbox\" name=\"delete$id\" value=\"$id\">\n";
+                // Create the header
+                echo "<th>Item ID</th>\n";
+                echo "<th>Item Name</th>\n";
+                echo "<th>Item Description</th>\n";
+                echo "<th>Delete</th>\n";
 
                 echo "</tr>\n";
+                echo "</thead>\n";
+                echo "<tbody>\n";
+
+                // Create the body
+                for($i = 0; $i < $rows; $i++) {
+                    echo "<tr>\n";
+                    for($j = 0; $j < $cols; $j++) {
+                        echo "<td>" . $res[$i][$j] . "</td>\n";
+                    }
+
+                    // Add one more column at the end with checkboxes to delete items
+                    $id = $res[$i][0];
+                    echo "<td><input type=\"checkbox\" name=\"delete$id\" value=\"$id\">\n";
+
+                    echo "</tr>\n";
+                }
+
+                echo "</tbody>\n";
+                echo "</table>\n";
+                echo "<br>\n";
+
+                // End the form
+                echo "<input type=\"submit\" value=\"Delete Selected Items\">\n";
+                echo "</form>\n";
+            } else {
+                echo "<h5>No items exist!</h5>\n";
             }
-
-            echo "</tbody>\n";
-            echo "</table>\n";
-            echo "<br>\n";
-
-            // End the form
-            echo "<input type=\"submit\" value=\"Delete Selected Items\">\n";
-            echo "</form>\n";
         }
 
         // Get all of the items from the database

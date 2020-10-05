@@ -35,7 +35,7 @@ for($i = 0; $i < $rows; $i++) {
 $connection->closeConnection();
 
 // Now, let's return back to the main page
-//header("Location: http://final.cowman.xyz/items.php");
-//exit;
+header("Location: http://final.cowman.xyz/items.php");
+exit;
 
 ?>
