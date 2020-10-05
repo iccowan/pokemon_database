@@ -14,14 +14,14 @@ error_reporting(E_ALL);
     <h1>Pokemon League Items</h1>
     <?php
         // If there are any errors, we will inform the user here
-        require_once('Error.php');
-        $errors = Error::getErrors();
+        require_once('CustomError.php');
+        $errors = CustomError::getErrors();
         foreach($errors as $err)
             echo "<p>$err</p>\n";
     ?>
     <hr>
     <?php
-        include_once('DBConnect.php');
+        require_once('DBConnect.php');
 
         // Initialize the database connection
         $connection = new DBConnect();
