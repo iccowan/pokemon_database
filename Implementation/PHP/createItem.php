@@ -30,10 +30,10 @@ error_reporting(E_ALL);
             $item_desc = $_POST['item_description'];
             $redirect = false; // We'll set this as true when we're ready to redirect
 
-            if($item_name == '') {
+            if($item_name == "") {
                 CustomError::setError('Item name is required!');
                 $redirect = true;
-            } elseif($item_name == '') {
+            } elseif($item_name == "") {
                 CustomError::setError('Item description is required');
                 $redirect = true;
             }
