@@ -29,7 +29,7 @@
             <form action="trainers.php" method="POST">
             <?php
             echo "<table>\n<thead>\n<tr>";
-            echo "<td><b> Delete? </b></td>";
+
 
             $fields = $result->fetch_fields();
             for ($i=0; $i<$n_cols; $i++){
@@ -40,16 +40,7 @@
             // Begin body -----------------------------------------------
     
             for ($i=0; $i<$n_rows; $i++){
-                echo "<tr><td>";
-                $id = $qryres[$i][0];
-                //make a 1 checkbox for each row
-                ?>
-                    <input type="checkbox" 
-                    name="checkbox<?php echo $id; ?>"
-                    value=<?php echo $id ?>
-                />
-                </td>
-                <?php
+                echo "<tr>";
                 for($j=0; $j<$n_cols; $j++){
                     echo "<td>" . $qryres[$i][$j] . "</td>";
                 }
@@ -58,7 +49,7 @@
             }
             echo "</tbody>\n</table>\n";
             ?>
-            <input type="submit" value="Delete Selected Records" method=POST/> 
+            
             </form>
             <?php
     
@@ -70,24 +61,6 @@
 
         if(!$result = $conn->query($query)) {
             // If the query fails...
-            echo "Query failed!";
-            exit;
-        }
-
-        $del_stmt = $conn->prepare("DELETE FROM trainers WHERE trainer_id=?");
-
-        $qryres = $result->fetch_all();
-        $n_rows = $result->num_rows;
-        //check if something needs to be deleted. If so, delete it
-        for ($i=0; $i<$n_rows; $i++){
-            $id = $qryres[$i][0];
-            $del_stmt->bind_param('i', $id); // Syntax i, s, 
-            if (isset($_POST["checkbox$id"]) && !$del_stmt->execute()){
-                echo $conn->error;
-            }
-        }
-    
-        if(!$result = $conn->query($query)){
             echo "Query failed!";
             exit;
         }
@@ -104,7 +77,7 @@
     <form action="/addTrainer.php">
         <input type="submit" value="Add a new Trainer" />
     </form>
-    
+
     <form action="/">
         <input type="submit" value="Return Home" />
     </form>
