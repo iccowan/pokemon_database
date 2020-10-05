@@ -33,9 +33,9 @@
             echo "<tr>\n";
 
             // Create the header
-            for($i = 0; $i < $cols; $i++) {
-                echo "<th>" . $fields[$i]->name . "</th>\n";
-            }
+            echo "<th>Item ID</th>\n";
+            echo "<th>Item Name</th>\n";
+            echo "<th>Item Description</th>\n";
             echo "<th>Delete</th>\n";
 
             echo "</tr>\n";
