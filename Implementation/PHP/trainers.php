@@ -87,7 +87,7 @@
             }
         }
     
-        if(!$result = $conn->query($sql)){
+        if(!$result = $conn->query($query)){
             echo "Query failed!";
             exit;
         }
