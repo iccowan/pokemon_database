@@ -17,7 +17,7 @@
         
     ?>
     
-    <form action="deleteFromTable.php" method=POST>\n
+    <form action="/createItem.php" method=POST>
         <label for="item_name">Item Name</label>
         <input type="text" name="item_name">
         <br>
@@ -25,6 +25,10 @@
         <input type="textarea" name="item_description">
         <br>
         <input type="submit" value="Submit">
+    </form>
+
+    <form action="/items.php">
+        <input type="submit" value="Cancel">
     </form>
 </body>
 </html>
