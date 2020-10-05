@@ -58,6 +58,7 @@
 
             echo "</tbody>\n";
             echo "</table>\n";
+            echo "<br>\n";
 
             // End the form
             echo "<input type=\"submit\" value=\"Delete Selected Items\">\n";
@@ -85,6 +86,12 @@
     <!-- Create the button to go to the page to create a new item -->
     <form action="/createItem.php">
         <input type="submit" value="Create a new Item" />
+    </form>
+    <br>
+
+    <!-- Create a button to go back home -->
+    <form action="/">
+        <input type="submit" value="Return Home" />
     </form>
 </body>
 </html>
