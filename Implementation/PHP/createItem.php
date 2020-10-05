@@ -63,10 +63,10 @@ error_reporting(E_ALL);
     
     <form action="/createItem.php" method="POST">
         <label for="item_name">Item Name</label>
-        <input type="text" name="item_name">
+        <input type="text" name="item_name" value="">
         <br><br>
         <label for="item_description">Item Description</label>
-        <input type="textarea" name="item_description">
+        <input type="text" name="item_description" value="">
         <br><br>
         <input type="submit" value="Submit">
     </form>
