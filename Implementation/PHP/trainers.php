@@ -26,7 +26,7 @@
             
             // Begin header ---------------------------------------------
             ?>
-            <form action="manageInstruments.php" method="POST">
+            <form action="trainers.php" method="POST">
             <?php
             echo "<table>\n<thead>\n<tr>";
             echo "<td><b> Delete? </b></td>";
@@ -83,7 +83,7 @@
 
     <br>
     <!-- Create the button to go to the page to add a new trainer -->
-    <form action="/addTainer.php">
+    <form action="/addTrainer.php">
         <input type="submit" value="Add a new Trainer" />
     </form>
 </body>
