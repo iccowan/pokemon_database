@@ -54,8 +54,8 @@ error_reporting(E_ALL);
 
             if($stmt->execute()) {
                 header("Location: http://final.cowman.xyz/items.php");
-            } else {
-                CustomError::setError('Unable to create new item.');
+            } else {e
+                CustomError::setError('Unable to create new item. ' . $conn->error);
                 header("Location: http://final.cowman.xyz/createItem.php");
             }
         }
