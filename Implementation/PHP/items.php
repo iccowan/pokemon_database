@@ -9,6 +9,11 @@
     <?php
         include_once('DBConnect.php');
 
+        // Allow error reporting
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+
         // Initialize the database connection
         $connection = new DBConnect();
         $conn = $connection->getConnection();
