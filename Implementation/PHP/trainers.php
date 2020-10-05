@@ -104,5 +104,9 @@
     <form action="/addTrainer.php">
         <input type="submit" value="Add a new Trainer" />
     </form>
+    
+    <form action="/">
+        <input type="submit" value="Return Home" />
+    </form>
 </body>
 </html>
