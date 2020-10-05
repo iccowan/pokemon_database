@@ -74,6 +74,24 @@
             exit;
         }
 
+        $del_stmt = $conn->prepare("DELETE FROM trainers WHERE trainer_id=?");
+
+        $qryres = $result->fetch_all();
+        $n_rows = $result->num_rows;
+        //check if something needs to be deleted. If so, delete it
+        for ($i=0; $i<$n_rows; $i++){
+            $id = $qryres[$i][0];
+            $del_stmt->bind_param('i', $id); // Syntax i, s, 
+            if (isset($_POST["checkbox$id"]) && !$del_stmt->execute()){
+                echo $conn->error;
+            }
+        }
+    
+        if(!$result = $conn->query($sql)){
+            echo "Query failed!";
+            exit;
+        }
+    
         // Put all of the results into a table
         trainers_to_table($result);
 
@@ -82,7 +100,7 @@
     ?>
 
     <br>
-    <!-- Create the button to go to the page to add a new trainer -->
+    
     <form action="/addTrainer.php">
         <input type="submit" value="Add a new Trainer" />
     </form>
