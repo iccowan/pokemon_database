@@ -34,12 +34,14 @@ error_reporting(E_ALL);
                 CustomError::setError('Item name is required!');
                 $redirect = true;
             } elseif($item_desc == "") {
-                CustomError::setError('Item description is required');
+                CustomError::setError('Item description is required!');
                 $redirect = true;
             }
 
-            if($redirect)
+            if($redirect) {
                 header("Location: http://final.cowman.xyz/createItem.php");
+                exit;
+            }
 
             // Now, we know we have a valid name and description, so let's
             // add it to the database
