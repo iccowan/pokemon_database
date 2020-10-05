@@ -22,7 +22,7 @@
         function items_to_table($items) {
             // Get all of the items and the number of rows, columns
             $res = $items->fetch_all();
-            $fields = $res->fetch_fields();
+            $fields = $items->fetch_fields();
             $rows = $items->num_rows;
             $cols = $items->field_count;
 
