@@ -14,8 +14,8 @@ error_reporting(E_ALL);
     <h1>Create New Item</h1>
     <?php
         // If there are any errors, we will inform the user here
-        require_once('Error.php');
-        $errors = Error::getErrors();
+        require_once('CustomError.php');
+        $errors = CustomError::getErrors();
         foreach($errors as $err)
             echo "<p>$err</p>\n";
     ?>
@@ -31,10 +31,10 @@ error_reporting(E_ALL);
             $redirect = false; // We'll set this as true when we're ready to redirect
 
             if($item_name == '') {
-                Error::setError('Item name is required!');
+                CustomError::setError('Item name is required!');
                 $redirect = true;
             } elseif($item_name == '') {
-                Error::setError('Item description is required');
+                CustomError::setError('Item description is required');
                 $redirect = true;
             }
 
@@ -55,7 +55,7 @@ error_reporting(E_ALL);
             if($stmt->execute()) {
                 header("Location: http://final.cowman.xyz/items.php");
             } else {
-                Error::setError('Unable to create new item.');
+                CustomError::setError('Unable to create new item.');
                 header("Location: http://final.cowman.xyz/createItem.php");
             }
         }

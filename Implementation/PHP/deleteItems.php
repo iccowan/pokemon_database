@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Allow error cookies
-require_once('Error.php');
+require_once('CustomError.php');
 
 // Init the database connection
 require_once('DBConnect.php');
@@ -31,7 +31,7 @@ for($i = 0; $i < $rows; $i++) {
     $id = $res[$i][0];
     if(isset($_POST["delete" . $id]) && !$stmt->execute()) {
         // Set a cookie so we can let the user know
-        Error::setError("Error Deleting: " . $conn->error);
+        CustomError::setError("Error Deleting: " . $conn->error);
     }
 }
 

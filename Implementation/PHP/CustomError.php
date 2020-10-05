@@ -1,6 +1,6 @@
 <?php
 
-class Error {
+class CustomError {
     // Retrieve errors from the errors cookie
     public static function getErrors() {
         // If the errors cookie doesn't exist, just return an empty array
