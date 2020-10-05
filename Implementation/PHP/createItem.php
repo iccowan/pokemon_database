@@ -15,6 +15,7 @@ error_reporting(E_ALL);
     <?php
         // If there are any errors, we will inform the user here
         require_once('CustomError.php');
+        CustomError::setError('test error');
         $errors = CustomError::getErrors();
         foreach($errors as $err)
             echo "<p>$err</p>\n";
@@ -30,13 +31,10 @@ error_reporting(E_ALL);
             $item_desc = trim($_POST['item_description']);
             $redirect = false; // We'll set this as true when we're ready to redirect
 
-            print_r("\"" . $item_name . "\"");
-            exit;
-
-            if(empty($item_name)) {
+            if($item_name == "") {
                 CustomError::setError('Item name is required!');
                 $redirect = true;
-            } elseif(empty($item_desc)) {
+            } elseif($item_desc == "") {
                 CustomError::setError('Item description is required');
                 $redirect = true;
             }
