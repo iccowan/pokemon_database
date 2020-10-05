@@ -4,6 +4,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// Allow error cookies
+require_once('Error.php');
+
 // Init the database connection
 require_once('DBConnect.php');
 $connection = new DBConnect();
@@ -27,7 +30,8 @@ $rows = $all_items->num_rows;
 for($i = 0; $i < $rows; $i++) {
     $id = $res[$i][0];
     if(isset($_POST["delete" . $id]) && !$stmt->execute()) {
-        echo "Query failed on ID " . $id . "!";
+        // Set a cookie so we can let the user know
+        Error::setError("Error Deleting: " . $conn->error);
     }
 }
 
