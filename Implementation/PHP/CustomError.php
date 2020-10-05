@@ -10,12 +10,11 @@ class CustomError {
         // At least one error exists, so let's loop through all of them and
         // return an array
         $i = 0;
-        $cookie = $_COOKIE['error' . $i];
         $errors = array();
-        while(isset($cookie)) {
-            array_push($errors, $cookie);
+        while(isset($_COOKIE['error' . $i])) {
+            array_push($errors, $_COOKIE['error' . $i]);
             setcookie('error' . $i, 'unset', time() - 3600);
-            $cookie = $_COOKIE['error' . ++$i];
+            $i++;
         }
 
         return $errors;
@@ -29,10 +28,8 @@ class CustomError {
         } else {
             // At least one error already exists, so let's find what error index we're at
             $i = 0;
-            $cookie = $_COOKIE['error' . $i];
-            while(isset($cookie)) {
-                $cookie = $_COOKIE['error' . ++$i];
-            }
+            while(isset($_COOKIE['error' . $i]))
+                $i++;
             
             setcookie("error" . $i, $error);
         }
