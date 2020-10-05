@@ -7,7 +7,11 @@
     <h1>Pokemon League Trainers</h1>
     <hr>
     <?php
-        include('DBConnect.php');
+        include_once('DBConnect.php');
+
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
 
         // Initialize the database connection
         $connection = new DBConnect();
@@ -26,6 +30,8 @@
             <?php
             echo "<table>\n<thead>\n<tr>";
             echo "<td><b> Delete? </b></td>";
+            echo "<td><b> Test </b></td>";
+
             $fields = $result->fetch_fields();
             for ($i=0; $i<$n_cols; $i++){
                 echo "<td><b>" . $fields[$i]->name . "</b></td>";
