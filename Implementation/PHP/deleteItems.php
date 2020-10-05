@@ -18,7 +18,7 @@ if(! $all_items = $conn->query("SELECT * FROM items;")) {
 // Prepare the deletion statement
 $statement = "DELETE FROM items WHERE item_id = ?;";
 $stmt = $conn->prepare($statement);
-$stmt->bind_param('i', $id);
+$stmt->bind_param("i", $id);
 
 // Loop through all of the items and see if any should be deleted
 $res = $all_items->fetch_all();
@@ -26,13 +26,16 @@ $rows = $items->num_rows;
 
 for($i = 0; $i < $rows; $i++) {
     $id = $res[$i][0];
-    if(isset($_POST['delete' . $id]) && !$stmt->execute()) {
+    if(isset($_POST["delete" . $id]) && !$stmt->execute()) {
         echo "Query failed on ID " . $id . "!";
     }
 }
 
+// Close the database connection
+$connection->closeConnection();
+
 // Now, let's return back to the main page
-header("Location: http://final.cowman.xyz/items.php");
-exit;
+//header("Location: http://final.cowman.xyz/items.php");
+//exit;
 
 ?>
