@@ -15,7 +15,6 @@ error_reporting(E_ALL);
     <?php
         // If there are any errors, we will inform the user here
         require_once('CustomError.php');
-        CustomError::setError('test error');
         $errors = CustomError::getErrors();
         foreach($errors as $err)
             echo "<p>$err</p>\n";
