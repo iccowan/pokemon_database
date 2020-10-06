@@ -46,7 +46,8 @@ error_reporting(E_ALL);
                 echo "<th>Item ID</th>\n";
                 echo "<th>Item Name</th>\n";
                 echo "<th>Item Description</th>\n";
-                echo "<th>Delete</th>\n";
+                echo "<th>Update?</th>\n";
+                echo "<th>Delete?</th>\n";
 
                 echo "</tr>\n";
                 echo "</thead>\n";
@@ -60,7 +61,9 @@ error_reporting(E_ALL);
                     }
 
                     // Add one more column at the end with checkboxes to delete items
+                    // and another button to update the items
                     $id = $res[$i][0];
+                    echo "<td><a href=\"/updateItem.php?item_id=$id\">Update</a></td>";
                     echo "<td><input type=\"checkbox\" name=\"delete$id\" value=\"$id\">\n";
 
                     echo "</tr>\n";
