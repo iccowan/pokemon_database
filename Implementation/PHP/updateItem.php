@@ -92,14 +92,15 @@ error_reporting(E_ALL);
         }
 
         // Now, we know the item result exists
-        $item_res = $stmt->get_result()->fetch_all()[0];
+        $item_res = $stmt->get_result()->fetch_all();
         $item_name = $item_res[0];
         $item_desc = $item_res[1];
+        echo "$item_name, $item_desc";
     ?>
     
     <form action="/updateItem.php" method="POST">
         <label for="item_name">Item Name</label>
-        <input type="hidden" name="item_id" value="<?php $item_id ?>"
+        <input type="hidden" name="item_id" value="<?php $item_id ?>">
         <input type="text" name="item_name" value="<?php $item_name ?>">
         <br><br>
         <label for="item_description">Item Description</label>
