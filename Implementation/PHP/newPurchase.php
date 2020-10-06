@@ -134,7 +134,7 @@ error_reporting(E_ALL);
     </form>
     <br>
     
-    <form action="/items.php">
+    <form action="/purchases.php">
         <input type="submit" value="Cancel">
     </form>
 </body>
