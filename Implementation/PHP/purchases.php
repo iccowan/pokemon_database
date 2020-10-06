@@ -72,9 +72,9 @@ error_reporting(E_ALL);
 
                     // Add another column if the item has been used
                     echo "<td>";
-                    
+
                     if(isset($items_used_hash_table[$id]))
-                        echo "Used in Challenge #$items_used_hash_table[$id]";
+                        echo "Yes, in Challenge #$items_used_hash_table[$id]";
                     else
                         echo "No";
 
