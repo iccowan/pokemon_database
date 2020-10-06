@@ -93,9 +93,8 @@ error_reporting(E_ALL);
 
         // Now, we know the item result exists
         $item_res = $stmt->get_result()->fetch_all();
-        $item_name = $item_res[0];
-        $item_desc = $item_res[1];
-        print_r($item_res);
+        $item_name = $item_res[0][0];
+        $item_desc = $item_res[0][1];
     ?>
     
     <form action="/updateItem.php" method="POST">
