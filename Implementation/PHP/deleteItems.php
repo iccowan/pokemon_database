@@ -16,6 +16,7 @@ $conn = $connection->getConnection();
 if(! $all_items = $conn->query("SELECT * FROM items;")) {
     CustomError::setError("Unable to get all items: " . $conn->error);
     header("Location: http://final.cowman.xyz/items.php");
+    exit;
 }
 
 // Prepare the deletion statement
@@ -40,6 +41,5 @@ $connection->closeConnection();
 
 // Now, let's return back to the main page
 header("Location: http://final.cowman.xyz/items.php");
-exit;
 
 ?>
