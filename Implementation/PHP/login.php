@@ -5,9 +5,18 @@
 </head>
 
 <?php
+    // Enable error reporting
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     // Require the User model and custom errors
     require_once('User.php');
     require_once('CustomError.php');
+
+    $errors = CustomError::getErrors();
+    foreach($errors as $err)
+        echo "<p>$err</p>\n";
 
     // Make sure the current user hasn't already been authenticated
     if(User::isAuth()) {
