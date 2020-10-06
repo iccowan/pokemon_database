@@ -83,7 +83,7 @@ error_reporting(E_ALL);
         $stmt = $conn->prepare('SELECT item_name, item_description FROM items WHERE item_id = ?');
 
         $item_id = $_GET['item_id'];
-        $stmt = $conn->bind_param('i', $item_id);
+        $stmt->bind_param('i', $item_id);
         $item_result = $stmt->execute();
         
         if(! $item_result) {
