@@ -84,16 +84,15 @@ error_reporting(E_ALL);
 
         $item_id = $_GET['item_id'];
         $stmt->bind_param('i', $item_id);
-        $item_result = $stmt->execute();
         
-        if(! $item_result) {
+        if(! $stmt->execute()) {
             CustomError::setError('Error getting item: ' . $conn->error);
             header('Location: http://final.cowman.xyz/items.php');
             exit;
         }
 
         // Now, we know the item result exists
-        $item_res = $item_result->fetch_all()[0];
+        $item_res = $stmt->get_result()->fetch_all()[0];
         $item_name = $item_res[0];
         $item_desc = $item_res[1];
     ?>
