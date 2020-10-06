@@ -5,6 +5,7 @@
 </head>
 <body>
 <h3>Hall of Fame</h3>
+<p>Trainers that have beaten the pokemon league</p>
     <?php
     //enable error messages
     ini_set('display_errors',1);
