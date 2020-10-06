@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create New Item</title>
+    <title>Update Item</title>
 </head>
 
 <?php
@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 ?>
 
 <body>
-    <h1>Create New Item</h1>
+    <h1>Update Item</h1>
     <?php
         // If there are any errors, we will inform the user here
         require_once('CustomError.php');
