@@ -9,6 +9,11 @@ error_reporting(E_ALL);
 
 <head>
     <title>Pokemon League Items</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
     <h1>Pokemon League Items</h1>
