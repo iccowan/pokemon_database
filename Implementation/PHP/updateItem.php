@@ -95,13 +95,12 @@ error_reporting(E_ALL);
         $item_res = $stmt->get_result()->fetch_all();
         $item_name = $item_res[0][0];
         $item_desc = $item_res[0][1];
-        print_r($item_name);
     ?>
     
     <form action="/updateItem.php" method="POST">
         <label for="item_name">Item Name</label>
-        <input type="hidden" name="item_id" value="<?php $item_id ?>">
-        <input type="text" name="item_name" value="<?php $item_name ?>">
+        <input type="hidden" name="item_id" value="<?php echo $item_id; ?>">
+        <input type="text" name="item_name" value="<?php echo $item_name; ?>">
         <br><br>
         <label for="item_description">Item Description</label>
         <input type="text" name="item_description" value="<?php $item_desc ?>">
