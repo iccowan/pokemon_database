@@ -31,10 +31,10 @@ error_reporting(E_ALL);
             $trainer_id = $_POST['trainer_id'];
             $redirect = false; // We'll set this as true when we're ready to redirect
 
-            if($item_name == "") {
+            if($item_id == "") {
                 CustomError::setError('An item is required!');
                 $redirect = true;
-            } elseif($item_desc == "") {
+            } elseif($trainer_id == "") {
                 CustomError::setError('A trainer is required!');
                 $redirect = true;
             }
