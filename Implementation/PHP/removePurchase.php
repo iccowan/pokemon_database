@@ -19,7 +19,7 @@ if(! $all_items = $conn->query("SELECT * FROM purchased_items;")) {
 }
 
 // Prepare the deletion statement
-$statement = "DELETE FROM purchased_items WHERE item_id = ?;";
+$statement = "DELETE FROM purchased_items WHERE purchased_id = ?;";
 $stmt = $conn->prepare($statement);
 $stmt->bind_param("i", $id);
 

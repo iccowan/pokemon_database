@@ -12,6 +12,7 @@
         <li><a href="/eliteFour.php">Elite Four</a></li>
         <li><a href="/hallOfFame.php">Hall of Fame</a></li>
         <li><a href="/items.php">Store Items</a></li>
+        <li><a href="/purchases.php">Store Purchases</a></li>
         <li><a href="/challenges.php">Challenges</a></li>
     </ul>
 </body>
