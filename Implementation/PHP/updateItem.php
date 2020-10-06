@@ -95,6 +95,7 @@ error_reporting(E_ALL);
         $item_res = $stmt->get_result()->fetch_all();
         $item_name = $item_res[0][0];
         $item_desc = $item_res[0][1];
+        print_r($item_name);
     ?>
     
     <form action="/updateItem.php" method="POST">
