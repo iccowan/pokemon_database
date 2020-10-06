@@ -40,7 +40,7 @@ error_reporting(E_ALL);
             }
 
             if($redirect) {
-                header("Location: http://final.cowman.xyz/createItem.php");
+                header("Location: http://final.cowman.xyz/newPurchase.php");
                 exit;
             }
 
@@ -112,6 +112,7 @@ error_reporting(E_ALL);
     <form action="/newPurchase.php" method="POST">
         <label for="item_id">Item</label>
         <select name="item_id">
+            <option value="">Select an Item</option>
             <?php
                 foreach($items as $item) {
                     echo "<option value=\"$item[0]\">$item[1]</option>";
@@ -121,6 +122,7 @@ error_reporting(E_ALL);
         <br><br>
         <label for="trainer_id">Trainer</label>
         <select name="trainer_id">
+            <option value="">Select a Trainer</option>
             <?php
                 foreach($trainers as $trainer) {
                     echo "<option value=\"$trainer[0]\">$trainer[1]</option>";
