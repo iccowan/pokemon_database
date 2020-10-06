@@ -53,7 +53,7 @@ error_reporting(E_ALL);
 
             // Prepare the query
             $stmt = $conn->prepare("UPDATE items
-                                       SET item_name = ?, item_description = ?,
+                                       SET item_name = ?, item_description = ?
                                      WHERE item_id = ?;");
             $stmt->bind_param("ssi", $item_name, $item_desc, $item_id);
 
