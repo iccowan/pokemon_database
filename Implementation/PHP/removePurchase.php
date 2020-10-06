@@ -13,13 +13,13 @@ $connection = new DBConnect();
 $conn = $connection->getConnection();
 
 // Get all of the items to check for deletion
-if(! $all_items = $conn->query("SELECT * FROM items;")) {
-    CustomError::setError("Unable to get all items: " . $conn->error);
-    header("Location: http://final.cowman.xyz/items.php");
+if(! $all_items = $conn->query("SELECT * FROM purchased_items;")) {
+    CustomError::setError("Unable to get all purchases: " . $conn->error);
+    header("Location: http://final.cowman.xyz/purchases.php");
 }
 
 // Prepare the deletion statement
-$statement = "DELETE FROM items WHERE item_id = ?;";
+$statement = "DELETE FROM purchased_items WHERE item_id = ?;";
 $stmt = $conn->prepare($statement);
 $stmt->bind_param("i", $id);
 
@@ -39,7 +39,7 @@ for($i = 0; $i < $rows; $i++) {
 $connection->closeConnection();
 
 // Now, let's return back to the main page
-header("Location: http://final.cowman.xyz/items.php");
+header("Location: http://final.cowman.xyz/purchases.php");
 exit;
 
 ?>

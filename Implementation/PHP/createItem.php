@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Create New Item</title>
+</head>
+
 <?php
 // Enable error reporting
 ini_set('display_errors', 1);
@@ -9,7 +11,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 
-</head>
 <body>
     <h1>Create New Item</h1>
     <?php
