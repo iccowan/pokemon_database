@@ -39,6 +39,7 @@ class User {
         $user = new self();
 
         // Connect to the database, and find the user
+        require_once('DBConnect.php');
         $connection = new DBConnect();
         $conn = $connection->getConnection();
         $get_user = $conn->prepare("SELECT * FROM trainers WHERE trainer_name = ?");
@@ -53,7 +54,10 @@ class User {
         $user_info->bind_param("i", $user_id);
         $user_id = $trainer_record[0];
         
-        $user_record = $user_info->execute();
+        if(! $user_record = $user_info->execute()) {
+            return false;
+        }
+
         $user_info->close();
 
         // Make sure we have a user that has been returned
