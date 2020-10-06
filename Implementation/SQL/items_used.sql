@@ -6,7 +6,9 @@ CREATE TABLE items_used (
     challenge_id INT unsigned NOT NULL,
     UNIQUE       (purchased_id),
     FOREIGN KEY  (purchased_id)
-                 REFERENCES purchased_items (purchased_id),
+                 REFERENCES purchased_items (purchased_id)
+                  ON DELETE RESTRICT,
     FOREIGN KEY  (challenge_id)
                  REFERENCES challenges (challenge_id)
+                  ON DELETE RESTRICT
 );

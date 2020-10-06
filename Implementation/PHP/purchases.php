@@ -28,12 +28,18 @@ error_reporting(E_ALL);
         $conn = $connection->getConnection();
 
         // Function to display all of the items as a table
-        function items_to_table($items) {
+        function items_to_table($items, $used_items) {
             // Get all of the items and the number of rows, columns
             $res = $items->fetch_all();
             $fields = $items->fetch_fields();
             $rows = $items->num_rows;
             $cols = $items->field_count;
+
+            // Let's create a hashtable for easy lookups between the items used
+            // and challenges
+            $items_used_hash_table = array();
+            foreach($used_items->fetch_all() as $used)
+                $items_used_hash_table[$used[0]] = $used[1];
 
             if($rows > 0) {
                 // Create a form to delete items
@@ -47,6 +53,7 @@ error_reporting(E_ALL);
                 echo "<th>Item Name</th>\n";
                 echo "<th>Trainer Name</th>\n";
                 echo "<th>Delete</th>\n";
+                echo "<th>Used?</th>\n";
 
                 echo "</tr>\n";
                 echo "</thead>\n";
@@ -62,6 +69,16 @@ error_reporting(E_ALL);
                     // Add one more column at the end with checkboxes to delete items
                     $id = $res[$i][0];
                     echo "<td><input type=\"checkbox\" name=\"delete$id\" value=\"$id\">\n";
+
+                    // Add another column if the item has been used
+                    echo "<td>";
+                    
+                    if(isset($items_used_hash_table[$id]))
+                        echo "Used in Challenge #$items_used_hash_table[$id]";
+                    else
+                        echo "No";
+
+                    echo "</td>\n";
 
                     echo "</tr>\n";
                 }
@@ -90,10 +107,21 @@ error_reporting(E_ALL);
             // If the query fails...
             CustomError::setError('Unable to retrieve purchases: ' . $conn->error);
             header("Location: http://final.cowman.xyz/purchases.php");
+            exit;
+        }
+
+        // Now, let's get all of the used items and challengesso we can share
+        // this information
+        $query2 = "SELECT purchased_id, challenge_id FROM items_used;";
+        if(!$used_items = $conn->query($query2)) {
+            // If the query fails...
+            CustomError::setError('Unable to retrieve used items: ' . $conn->error);
+            header("Location: http://final.cowman.xyz/purchases.php");
+            exit;
         }
 
         // Put all of the results into a table
-        items_to_table($result);
+        items_to_table($result, $used_items);
 
         // Close the connection
         $connection->closeConnection();
