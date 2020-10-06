@@ -12,6 +12,7 @@
 
     // Require the User model and custom errors
     require_once('User.php');
+    require_once('DBConnect.php');
     require_once('CustomError.php');
 
     $errors = CustomError::getErrors();
