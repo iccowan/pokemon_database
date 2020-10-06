@@ -103,7 +103,7 @@ error_reporting(E_ALL);
         <input type="text" name="item_name" value="<?php echo $item_name; ?>">
         <br><br>
         <label for="item_description">Item Description</label>
-        <input type="text" name="item_description" value="<?php $item_desc ?>">
+        <input type="text" name="item_description" value="<?php echo $item_desc; ?>">
         <br><br>
         <input type="submit" value="Save">
     </form>
