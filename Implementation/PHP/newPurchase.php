@@ -85,6 +85,7 @@ error_reporting(E_ALL);
             CustomError::setError('Unable to get trainers: ' . $conn->error);
             $connection->closeConnection();
             header("Location: http://final.cowman.xyz/newPurchase.php");
+            exit;
         }
 
         // Now, we should have all of the items and trainers but we need

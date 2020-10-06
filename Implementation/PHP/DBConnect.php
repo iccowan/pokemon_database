@@ -40,7 +40,7 @@ class DBConnect {
         $dbhost = $information["db_host"];
         $dbuser = $information["db_user"];
         $dbpass = $information["db_password"];
-	$dbname = $information["db_name"];
+	    $dbname = $information["db_name"];
 
         // If host, username, or password don't exist, lets stop
         if($dbhost == "" || $dbuser == "" || $dbpass == "")
