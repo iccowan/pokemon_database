@@ -35,15 +35,18 @@
             for ($i=0; $i<$n_cols; $i++){
                 echo "<td><b>" . $fields[$i]->name . "</b></td>";
             }
+            echo "<td><b>Update?</b></td>";
             echo "</tr>\n</thead>\n";
             
             // Begin body -----------------------------------------------
     
             for ($i=0; $i<$n_rows; $i++){
                 echo "<tr>";
+                $id = $qryres[$i][0];
                 for($j=0; $j<$n_cols; $j++){
                     echo "<td>" . $qryres[$i][$j] . "</td>";
                 }
+                echo "<td><a href=\"/updateTrainers.php?trainer_id=$id\">Update</a></td>";
                 echo "</tr>\n";
     
             }
