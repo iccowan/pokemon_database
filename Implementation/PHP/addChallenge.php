@@ -6,20 +6,14 @@
 <body>
     <h3>Add a Challenge</h3>
     <?php
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+        
+        echo $_POST['trainer_id'];
         if(isset($_POST['trainer_id'])) {
 
-            $new_trainer = trim($_POST['trainer_id']);
-            $redirect = false;
-
-            if($new_trainer == "") {
-                echo "Trainer ID is required";
-                $redirect = true;
-            } 
-
-            if($redirect) {
-                header("Location: http://final.cowman.xyz/addChallenge.php");
-                exit;
-            }
+            $new_trainer = $_POST['trainer_id'];
 
             require_once('DBConnect.php');
             $connection = new DBConnect();
@@ -39,7 +33,7 @@
     
     <form action="/addChallenge.php" method="POST">
         <label for="trainer_id">Trainer ID</label>
-        <input type="text" name="trainer_id" value="">
+        <input type="number" name="trainer_id" value="">
         <br>
         <input type="submit" value="Submit">
     </form>
