@@ -68,7 +68,7 @@
     <input type="submit" value="Delete selected items">
     </form>
     <br>
-    <form action="/addChallenge.php" method="POST">
+    <form action="/addChallenge.php">
         <input type="submit" value="Enter a new Challenge" />
     </form>
     <br>

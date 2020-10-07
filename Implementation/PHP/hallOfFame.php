@@ -68,6 +68,10 @@
     <input type="submit" value="Delete selected items">
     </form>
     <br>
+    <form action="/addHOF.php">
+    <input type="submit" value="Enter a new record">
+    </form>
+    <br>
     <form action="/">
         <input type="submit" value="Return Home" />
     </form>
