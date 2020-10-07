@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Hall of Fame</title>
+<title>Challenges</title>
 </head>
 <body>
-<h3>Hall of Fame</h3>
-<p>Trainers that have beaten the pokemon league</p>
+<h3>Challenges</h3>
+<p>Overall attempts at the pokemon league</p>
     <?php
     //enable error messages
     ini_set('display_errors',1);
@@ -24,7 +24,7 @@
         exit;
     }
 
-    $query = "SELECT * FROM hall_of_fame";
+    $query = "SELECT * FROM challenges";
 
     if(!$result = $conn->query($query)){
         echo "Query entered incorrectly";
@@ -37,7 +37,7 @@
 
     ?>
 
-    <form action="deleteHOF.php" method="POST">
+    <form action="deleteChallenge.php" method="POST">
     <table>
     <thead>
     <tr>
@@ -66,6 +66,10 @@
     </table>
     <br>
     <input type="submit" value="Delete selected items">
+    </form>
+    <br>
+    <form action="/addChallenge.php">
+        <input type="submit" value="Enter a new Challenge" />
     </form>
     <br>
     <form action="/">
