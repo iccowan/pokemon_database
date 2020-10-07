@@ -68,7 +68,7 @@ error_reporting(E_ALL);
     ?>
 
     <?php
-        // Get the item that is referenced
+        // Get the trainer that is referenced
         require_once('DBConnect.php');
 
         if(! isset($_GET['trainer_id'])) {
@@ -90,7 +90,7 @@ error_reporting(E_ALL);
             exit;
         }
 
-        // Now, we know the item result exists
+        // Now, we know the trainer result exists
         $result = $stmt->get_result()->fetch_all();
         $trainer_id = $result[0][0];
         $rank = $result[0][1];
