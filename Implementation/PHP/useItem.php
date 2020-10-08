@@ -31,8 +31,6 @@ error_reporting(E_ALL);
             $purchase_id = $_POST['purchase_id'];
             $redirect = false; // We'll set this as true when we're ready to redirect
 
-            print_r($_POST);
-
             if($challenge_id == "") {
                 CustomError::setError('An challenge is required!');
                 $redirect = true;
@@ -50,7 +48,7 @@ error_reporting(E_ALL);
             $conn = $connection->getConnection();
 
             // Prepare the query
-            $stmt = $conn->prepare("INSERT INTO items_used(purchase_id, challenge_id)
+            $stmt = $conn->prepare("INSERT INTO items_used(purchased_id, challenge_id)
                                     VALUES (?, ?);");
             $stmt->bind_param("ii", $purchase_id, $challenge_id);
 
