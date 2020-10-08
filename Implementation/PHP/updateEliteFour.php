@@ -27,14 +27,14 @@ error_reporting(E_ALL);
         if(isset($_POST['trainer_id']) || isset($_POST['rank'])) {
             // Make sure we alert that there's an error if either id or
             // rank does not exist
-            $trainer_id = $_POST['trainer_id'];
-            $rank = $_POST['rank'];
+            $new_trainer_id = $_POST['trainer_id'];
+            $new_rank = $_POST['rank'];
             $redirect = false; // We'll set this as true when we're ready to redirect
 
-            if($trainer_id == "") {
+            if($new_trainer_id == "") {
                 CustomError::setError('Trainer ID is required!');
                 $redirect = true;
-            } elseif($rank == "") {
+            } elseif($new_rank == "") {
                 CustomError::setError('Rank is Required!');
                 $redirect = true;
             }
@@ -54,7 +54,7 @@ error_reporting(E_ALL);
             $stmt = $conn->prepare("UPDATE elite_four
                                        SET trainer_id = ?, rank = ?
                                      WHERE trainer_id = ?;");
-            $stmt->bind_param("iii", $trainer_id, $rank, $trainer_id);
+            $stmt->bind_param("iii", $new_trainer_id, $new_rank, $trainer_id);
 
             if($stmt->execute()) {
                 header("Location: http://final.cowman.xyz/eliteFour.php");

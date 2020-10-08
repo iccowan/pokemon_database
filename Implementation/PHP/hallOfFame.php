@@ -4,8 +4,9 @@
 <title>Hall of Fame</title>
 </head>
 <body>
-<h3>Hall of Fame</h3>
-<p>Trainers that have beaten the pokemon league</p>
+<h1>Hall of Fame</h1>
+<h3>Trainers that have beaten the pokemon league</h3>
+<hr>
     <?php
     //enable error messages
     ini_set('display_errors',1);
@@ -46,7 +47,8 @@
             for ($i=0; $i<$n_cols; $i++){
                 echo "<td><b>" . $fields[$i]->name . "</b></td>";
             }
-            ?>
+    ?>
+    <td><b>Update?</b></td>
     <td><b>Delete?</b></td>
     </tr>
     </thead>
@@ -58,6 +60,7 @@
                     echo "<td>" . $qryres[$i][$j] . "</td>";
                 }
                 $id = $qryres[$i][0];
+                echo "<td><a href=\"/updateHOF.php?hof_id=$id\">Update</a></td>";
                 echo "<td><input type=\"checkbox\" name=\"delete$id\" value=\"$id\">\n";
                 echo "</tr>\n";
     }
