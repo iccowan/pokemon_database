@@ -27,6 +27,7 @@ error_reporting(E_ALL);
         if(isset($_POST['trainer_id']) || isset($_POST['rank'])) {
             // Make sure we alert that there's an error if either id or
             // rank does not exist
+            $old_trainer_id = $_POST['old_trainer_id'];
             $new_trainer_id = $_POST['trainer_id'];
             $new_rank = $_POST['rank'];
             $redirect = false; // We'll set this as true when we're ready to redirect
@@ -54,7 +55,7 @@ error_reporting(E_ALL);
             $stmt = $conn->prepare("UPDATE elite_four
                                        SET trainer_id = ?, rank = ?
                                      WHERE trainer_id = ?;");
-            $stmt->bind_param("iii", $new_trainer_id, $new_rank, $trainer_id);
+            $stmt->bind_param("iii", $new_trainer_id, $new_rank, $old_trainer_id);
 
             if($stmt->execute()) {
                 header("Location: http://final.cowman.xyz/eliteFour.php");
@@ -97,6 +98,7 @@ error_reporting(E_ALL);
     ?>
     
     <form action="/updateEliteFour.php" method="POST">
+        <input type="hidden" name="old_trainer_id" value="<?php echo $trainer_id; ?>">
         <label for="trainer_id">Trainer ID</label>
         <input type="text" name="trainer_id" value="<?php echo $trainer_id; ?>">
         <br><br>
