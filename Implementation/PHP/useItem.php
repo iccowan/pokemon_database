@@ -109,7 +109,7 @@ error_reporting(E_ALL);
             <option value="">Select a Challenge</option>
             <?php
                 foreach($challenges as $challenge) {
-                    echo "<option value=\"$challenge[0]\">Challenge #$challenge[0] - $challenge[1]</option>";
+                    echo "<option value=\"$challenge[0]\">Challenge #$challenge[0] - $challenge[1]</option>\n";
                 }
             ?>
         </select>
