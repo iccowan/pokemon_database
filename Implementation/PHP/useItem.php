@@ -28,8 +28,10 @@ error_reporting(E_ALL);
             // Make sure we alert that there's an error if either name or
             // description does not exist
             $challenge_id = $_POST['challenge_id'];
-            $purchase__id = $_POST['purchase_id'];
+            $purchase_id = $_POST['purchase_id'];
             $redirect = false; // We'll set this as true when we're ready to redirect
+
+            print_r($_POST);
 
             if($challenge_id == "") {
                 CustomError::setError('An challenge is required!');
