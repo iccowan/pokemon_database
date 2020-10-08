@@ -76,7 +76,7 @@ error_reporting(E_ALL);
                     if(isset($items_used_hash_table[$id]))
                         echo "Yes, in Challenge #$items_used_hash_table[$id]";
                     else
-                        echo "No";
+                        echo "<a href=\"/useItem.php?purchase_id=$id\">No, Click to Use</a>";
 
                     echo "</td>\n";
 
