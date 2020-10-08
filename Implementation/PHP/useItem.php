@@ -99,11 +99,12 @@ error_reporting(E_ALL);
 
         // Get the arrays of both the challenges
         $challenges = id_name_to_array($res_challenges);
+        $purchase_id = $_GET['purchase_id'];
     ?>
     
     <form action="/useItem.php" method="POST">
+        <input type="hidden" name="purchase_id" value="<?php $purchase_id; ?>">
         <label for="challenge_id">Challenge</label>
-        <input type="hidden" name="purchase_id" value="<?php $_GET['purchase_id'] ?>">
         <select name="challenge_id">
             <option value="">Select a Challenge</option>
             <?php
