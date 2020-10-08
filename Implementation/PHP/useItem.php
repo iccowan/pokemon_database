@@ -103,7 +103,7 @@ error_reporting(E_ALL);
     
     <form action="/useItem.php" method="POST">
         <label for="challenge_id">Challenge</label>
-        <form type="hidden" name="purchase_id" value="<?php $_GET['purchase_id'] ?>">
+        <input type="hidden" name="purchase_id" value="<?php $_GET['purchase_id'] ?>">
         <select name="challenge_id">
             <option value="">Select a Challenge</option>
             <?php
