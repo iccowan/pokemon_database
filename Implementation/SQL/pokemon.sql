@@ -8,5 +8,6 @@ CREATE TABLE pokemon (
     pokemon_level       INT             NOT NULL,
     trainer_id          INT unsigned    NOT NULL,
     FOREIGN KEY (trainer_id)      REFERENCES trainers     (trainer_id),
-    FOREIGN KEY (pokemon_type_id) REFERENCES pokemon_type (pokemon_type_id)
+    FOREIGN KEY (pokemon_type_id) REFERENCES pokemon_type (pokemon_type_id),
+    CHECK (pokemon_level >=1 AND pokemon_level <=100)
 );

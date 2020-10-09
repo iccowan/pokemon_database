@@ -24,21 +24,17 @@ error_reporting(E_ALL);
     <?php
         // If post variables are set, let's get those and add them to the DB
         // If not, we'll produce a form to Update the Elite Four
-        if(isset($_POST['trainer_id']) || isset($_POST['rank'])) {
+        if(isset($_POST['trainer_id'])) {
             // Make sure we alert that there's an error if either id or
             // rank does not exist
             $old_trainer_id = $_POST['old_trainer_id'];
             $new_trainer_id = $_POST['trainer_id'];
-            $new_rank = $_POST['rank'];
             $redirect = false; // We'll set this as true when we're ready to redirect
 
             if($new_trainer_id == "") {
                 CustomError::setError('Trainer ID is required!');
                 $redirect = true;
-            } elseif($new_rank == "") {
-                CustomError::setError('Rank is Required!');
-                $redirect = true;
-            }
+            } 
 
             if($redirect) {
                 header("Location: http://final.cowman.xyz/updateEliteFour.php");
@@ -53,9 +49,9 @@ error_reporting(E_ALL);
 
             // Prepare the query
             $stmt = $conn->prepare("UPDATE elite_four
-                                       SET trainer_id = ?, rank = ?
+                                       SET trainer_id = ?
                                      WHERE trainer_id = ?;");
-            $stmt->bind_param("iii", $new_trainer_id, $new_rank, $old_trainer_id);
+            $stmt->bind_param("ii", $new_trainer_id, $old_trainer_id);
 
             if($stmt->execute()) {
                 header("Location: http://final.cowman.xyz/eliteFour.php");
@@ -80,7 +76,7 @@ error_reporting(E_ALL);
 
         $connection = new DBConnect();
         $conn = $connection->getConnection();
-        $stmt = $conn->prepare('SELECT trainer_id, rank FROM elite_four WHERE trainer_id = ?');
+        $stmt = $conn->prepare('SELECT trainer_id FROM elite_four WHERE trainer_id = ?');
 
         $trainer_id = $_GET['trainer_id'];
         $stmt->bind_param('i', $trainer_id);
@@ -94,16 +90,12 @@ error_reporting(E_ALL);
         // Now, we know the trainer result exists
         $result = $stmt->get_result()->fetch_all();
         $trainer_id = $result[0][0];
-        $rank = $result[0][1];
     ?>
     
     <form action="/updateEliteFour.php" method="POST">
         <input type="hidden" name="old_trainer_id" value="<?php echo $trainer_id; ?>">
         <label for="trainer_id">Trainer ID</label>
         <input type="text" name="trainer_id" value="<?php echo $trainer_id; ?>">
-        <br><br>
-        <label for="rank">Rank</label>
-        <input type="text" name="rank" value="<?php echo $rank; ?>">
         <br><br>
         <input type="submit" value="Save">
     </form>

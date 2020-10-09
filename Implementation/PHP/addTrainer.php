@@ -19,15 +19,23 @@
             $trainer_name = trim($_POST['trainer_name']);
             $trainer_hometown = trim($_POST['hometown']);
             $trainer_rival = trim($_POST['rival_id']);
-
+            
             require_once('DBConnect.php');
             $connection = new DBConnect();
             $conn = $connection->getConnection();
 
-            // Prepare the query
-            $stmt = $conn->prepare("INSERT INTO trainers(trainer_name,
+            if ($trainer_rival == "")
+            {
+                $stmt = $conn->prepare("INSERT INTO trainers(trainer_name,
+                                    hometown) VALUES (?, ?);");
+                $stmt->bind_param("ss", $trainer_name, $trainer_hometown);
+            }
+            else{
+                $stmt = $conn->prepare("INSERT INTO trainers(trainer_name,
                                     hometown, rival_id) VALUES (?, ?, ?);");
-            $stmt->bind_param("ssi", $trainer_name, $trainer_hometown, $trainer_rival);
+                $stmt->bind_param("ssi", $trainer_name, $trainer_hometown, $trainer_rival);
+            }
+
 
             if($stmt->execute()) {
                 header("Location: http://final.cowman.xyz/trainers.php");
