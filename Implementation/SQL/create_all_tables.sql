@@ -26,9 +26,6 @@ SOURCE pokemon.sql;
 /* pokemon_types table */
 SOURCE pokemon_type.sql;
 
-/* actual_pokemon_types table */
-SOURCE actual_pokemon_types.sql;
-
 /* elite_four table */
 SOURCE elite_four.sql
 
