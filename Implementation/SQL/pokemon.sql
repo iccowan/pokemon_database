@@ -6,5 +6,6 @@ CREATE TABLE pokemon (
     pokemon_name        VARCHAR(32)     NOT NULL,
     pokemon_level       INT             NOT NULL,
     trainer_id          INT unsigned    NOT NULL,
-    FOREIGN KEY (trainer_id) REFERENCES trainers (trainer_id)
+    FOREIGN KEY (trainer_id) REFERENCES trainers (trainer_id),
+    CHECK (pokemon_level >=1 AND pokemon_level <=100)
 );
