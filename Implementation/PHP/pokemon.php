@@ -100,7 +100,7 @@ error_reporting(E_ALL);
     <br>
     <!-- Create the button to go to the page to create a new item -->
     <form action="/createPokemon.php">
-        <input type="submit" value="Create a new Item" />
+        <input type="submit" value="Create a new Pokemon" />
     </form>
     <br>
 

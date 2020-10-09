@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create New Pokemon</title>
+    <title>Update Pokemon</title>
 </head>
 
 <?php
@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 ?>
 
 <body>
-    <h1>Create New Pokemon</h1>
+    <h1>Update Pokemon</h1>
     <?php
         // If there are any errors, we will inform the user here
         require_once('CustomError.php');
@@ -31,7 +31,6 @@ error_reporting(E_ALL);
             $poke_type_id = trim($_POST['pokemon_type_id']);
             $poke_level = trim($_POST['pokemon_level']);
             $trainer_id = trim($_POST['trainer_id']);
-
             $redirect = false; // We'll set this as true when we're ready to redirect
 
             if($poke_name == "") {
@@ -49,7 +48,7 @@ error_reporting(E_ALL);
             }
 
             if($redirect) {
-                header("Location: http://final.cowman.xyz/createPokemon.php");
+                header("Location: http://final.cowman.xyz/updatePokemon.php");
                 exit;
             }
 
@@ -67,24 +66,55 @@ error_reporting(E_ALL);
             if($stmt->execute()) {
                 header("Location: http://final.cowman.xyz/pokemon.php");
             } else {
-                CustomError::setError('Unable to create new pokemon. ' . $conn->error);
-                header("Location: http://final.cowman.xyz/createPokemon.php");
+                CustomError::setError('Unable to update pokemon. ' . $conn->error);
+                header("Location: http://final.cowman.xyz/updatePokemon.php");
             }
         }
     ?>
+
+    <?php
+        // Get the item that is referenced
+        require_once('DBConnect.php');
+
+        if(! isset($_GET['pokemon'])) {
+            CustomError::setError('Must select the pokemon to update.');
+            header('Location: http://final.cowman.xyz/pokemon.php');
+            exit;
+        }
+
+        $connection = new DBConnect();
+        $conn = $connection->getConnection();
+        $stmt = $conn->prepare('SELECT * FROM pokemon WHERE pokemon_id = ?');
+
+        $item_id = $_GET['pokemon_id'];
+        $stmt->bind_param('i', $pokemon_id);
+        
+        if(! $stmt->execute()) {
+            CustomError::setError('Error getting pokemon: ' . $conn->error);
+            header('Location: http://final.cowman.xyz/pokemon.php');
+            exit;
+        }
+
+        // Now, we know the item result exists
+        $poke_res = $stmt->get_result()->fetch_all();
+        $poke_name = $poke_res[0][0];
+        $poke_type_id = $poke_res[0][1];
+        $poke_level = $poke_res[0][2];
+        $poke_trainer_id = $poke_res[0][3];
+    ?>
     
-    <form action="/createPokemon.php" method="POST">
-        <label for="pokemon_name">Pokemon Name</label>
-        <input type="text" name="pokemon_name" value="">
+    <form action="/updateItem.php" method="POST">
+    <label for="pokemon_name">Pokemon Name</label>
+        <input type="text" name="pokemon_name" value="<?php echo $poke_name ?>">
         <br><br>
         <label for="pokemon_type_id">Pokemon Type ID</label>
-        <input type="text" name="pokemon_type_id" value="">
+        <input type="text" name="pokemon_type_id" value="<?php echo $poke_type_id ?>">
         <br><br>
         <label for="pokemon_level">Pokemon Level</label>
-        <input type="text" name="pokemon_level" value="">
+        <input type="text" name="pokemon_level" value="<?php echo $poke_level ?>">
         <br><br>
         <label for="trainer_id">Trainer ID</label>
-        <input type="text" name="trainer_id" value="">
+        <input type="text" name="trainer_id" value="<?php echo $poke_trainer_id ?>">
         <br><br>
         <input type="submit" value="Submit">
     </form>
