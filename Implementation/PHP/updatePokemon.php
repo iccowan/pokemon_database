@@ -76,7 +76,7 @@ error_reporting(E_ALL);
         // Get the item that is referenced
         require_once('DBConnect.php');
 
-        if(! isset($_GET['pokemon'])) {
+        if(! isset($_GET['pokemon_id'])) {
             CustomError::setError('Must select the pokemon to update.');
             header('Location: http://final.cowman.xyz/pokemon.php');
             exit;
