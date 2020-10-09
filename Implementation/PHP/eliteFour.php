@@ -87,11 +87,7 @@ error_reporting(E_ALL);
     ?>
 
     <br>
-    <!-- Create the button to go to the page to create a new item -->
-    <form action="/addEliteFour.php">
-        <input type="submit" value="Add A New Elite Four" />
-    </form>
-    <br>
+    
 
     <!-- Create a button to go back home -->
     <form action="/">
