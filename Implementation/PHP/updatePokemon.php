@@ -97,7 +97,6 @@ error_reporting(E_ALL);
 
         // Now, we know the item result exists
         $poke_res = $stmt->get_result()->fetch_all();
-        print_r($poke_res);
         $poke_name = $poke_res[0][0];
         $poke_type_id = $poke_res[0][1];
         $poke_level = $poke_res[0][2];
