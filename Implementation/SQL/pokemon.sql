@@ -24,7 +24,7 @@ CREATE TRIGGER max_pokemon
 BEGIN
         IF (SELECT COUNT(*)
               FROM pokemon
-             WHERE trainers.trainer_id = NEW.trainer_id) >= 4
+             WHERE pokemon.trainer_id = NEW.trainer_id) >= 6
         THEN
             SIGNAL SQLSTATE '14000'
                SET MESSAGE_TEXT='Unable to create new pokemon. This trainer already has 6 or more pokemon.';
