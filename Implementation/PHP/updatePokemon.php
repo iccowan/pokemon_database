@@ -27,6 +27,7 @@ error_reporting(E_ALL);
         if(isset($_POST['pokemon_name']) || isset($_POST['pokemon_type_id']) || isset($_POST['pokemon_level']) || isset($_POST['trainer_id'])) {
             // Make sure we alert that there's an error if either name or
             // description does not exist
+            $poke_id = trim($_POST['pokemon_id']);
             $poke_name = trim($_POST['pokemon_name']);
             $poke_type_id = trim($_POST['pokemon_type_id']);
             $poke_level = trim($_POST['pokemon_level']);
@@ -59,9 +60,10 @@ error_reporting(E_ALL);
             $conn = $connection->getConnection();
 
             // Prepare the query
-            $stmt = $conn->prepare("INSERT INTO pokemon(pokemon_name,
-                                    pokemon_type_id, pokemon_level, trainer_id) VALUES (?, ?, ?, ?);");
-            $stmt->bind_param("siii", $poke_name, $poke_type_id, $poke_level, $trainer_id);
+            $stmt = $conn->prepare("UPDATE pokemon
+                                    SET pokemon_name = ?, pokemon_type_id = ?, pokemon_level = ?, trainer_id = ?
+                                    WHERE pokemon_id = ?;");
+            $stmt->bind_param("siii", $poke_name, $poke_type_id, $poke_level, $trainer_id, $poke_id);
 
             if($stmt->execute()) {
                 header("Location: http://final.cowman.xyz/pokemon.php");
@@ -97,14 +99,16 @@ error_reporting(E_ALL);
 
         // Now, we know the item result exists
         $poke_res = $stmt->get_result()->fetch_all();
-        $poke_name = $poke_res[0][0];
-        $poke_type_id = $poke_res[0][1];
-        $poke_level = $poke_res[0][2];
-        $poke_trainer_id = $poke_res[0][3];
+        $poke_id = $poke_res[0][0];
+        $poke_name = $poke_res[0][1];
+        $poke_type_id = $poke_res[0][2];
+        $poke_level = $poke_res[0][3];
+        $poke_trainer_id = $poke_res[0][4];
     ?>
     
     <form action="/updateItem.php" method="POST">
     <label for="pokemon_name">Pokemon Name</label>
+        <input type="hidden" name="pokemon_id" value="<?php echo $poke_id ?>">
         <input type="text" name="pokemon_name" value="<?php echo $poke_name ?>">
         <br><br>
         <label for="pokemon_type_id">Pokemon Type ID</label>
