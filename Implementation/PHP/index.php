@@ -9,6 +9,8 @@
     <hr>
     <ul>
         <li><a href="/trainers.php">Trainers</a></li>
+        <li><a href="/pokemon.php">Pokemon</a></li>
+        <li><a href="/pokemonTypes.php">Pokemon Types</a></li>
         <li><a href="/eliteFour.php">Elite Four</a></li>
         <li><a href="/hallOfFame.php">Hall of Fame</a></li>
         <li><a href="/items.php">Store Items</a></li>
