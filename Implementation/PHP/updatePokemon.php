@@ -63,13 +63,13 @@ error_reporting(E_ALL);
             $stmt = $conn->prepare("UPDATE pokemon
                                     SET pokemon_name = ?, pokemon_type_id = ?, pokemon_level = ?, trainer_id = ?
                                     WHERE pokemon_id = ?;");
-            $stmt->bind_param("siii", $poke_name, $poke_type_id, $poke_level, $trainer_id, $poke_id);
+            $stmt->bind_param("siiii", $poke_name, $poke_type_id, $poke_level, $trainer_id, $poke_id);
 
             if($stmt->execute()) {
                 header("Location: http://final.cowman.xyz/pokemon.php");
             } else {
                 CustomError::setError('Unable to update pokemon. ' . $conn->error);
-                header("Location: http://final.cowman.xyz/updatePokemon.php");
+                header("Location: http://final.cowman.xyz/updatePokemon.php?pokemon_id=" . $poke_id);
             }
         }
     ?>
