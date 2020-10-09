@@ -11,3 +11,24 @@ CREATE TABLE pokemon (
     FOREIGN KEY (pokemon_type_id) REFERENCES pokemon_type (pokemon_type_id),
     CHECK (pokemon_level >=1 AND pokemon_level <=100)
 );
+
+/*
+*   This trigger will run every time a new record is inserted into
+*   the pokemon table and confirm that the trainer doesn't already have
+*   6 or more pokemon.
+*/
+DELIMITER $$
+CREATE TRIGGER max_pokemon
+    BEFORE INSERT ON pokemon
+    FOR EACH ROW
+BEGIN
+        IF (SELECT COUNT(*)
+              FROM pokemon
+             WHERE trainers.trainer_id = NEW.trainer_id) >= 4
+        THEN
+            SIGNAL SQLSTATE '14000'
+               SET MESSAGE_TEXT='Unable to create new pokemon. This trainer already has 6 or more pokemon.';
+        END IF;
+END;
+$$
+DELIMITER ;
