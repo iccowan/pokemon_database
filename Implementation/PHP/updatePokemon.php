@@ -86,7 +86,7 @@ error_reporting(E_ALL);
         $conn = $connection->getConnection();
         $stmt = $conn->prepare('SELECT * FROM pokemon WHERE pokemon_id = ?');
 
-        $item_id = $_GET['pokemon_id'];
+        $pokemon_id = $_GET['pokemon_id'];
         $stmt->bind_param('i', $pokemon_id);
         
         if(! $stmt->execute()) {
