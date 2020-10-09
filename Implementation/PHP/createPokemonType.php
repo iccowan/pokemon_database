@@ -66,7 +66,7 @@ error_reporting(E_ALL);
     ?>
     
     <form action="/createPokemonType.php" method="POST">
-        <label for="type_name">Pokemon TypeName</label>
+        <label for="type_name">Pokemon Type Name</label>
         <input type="text" name="type_name" value="">
         <br><br>
         <label for="description">Pokemon Type Description</label>
