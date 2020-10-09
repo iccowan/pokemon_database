@@ -106,7 +106,7 @@ error_reporting(E_ALL);
         $poke_trainer_id = $poke_res[0][4];
     ?>
     
-    <form action="/updateItem.php" method="POST">
+    <form action="/updatePokemon.php" method="POST">
     <label for="pokemon_name">Pokemon Name</label>
         <input type="hidden" name="pokemon_id" value="<?php echo $poke_id ?>">
         <input type="text" name="pokemon_name" value="<?php echo $poke_name ?>">
